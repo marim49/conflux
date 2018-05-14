@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Limitless - Responsive Web Application Kit by Eugene Kopyov</title>
+	
+		<!-- Global stylesheets -->
+		<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+		<link href="../assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
+		<link href="../assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+		<link href="../assets/css/core.css" rel="stylesheet" type="text/css">
+		<link href="../assets/css/components.css" rel="stylesheet" type="text/css">
+		<link href="../assets/css/colors.css" rel="stylesheet" type="text/css">
+		<!-- /global stylesheets -->
+	
+		<!-- Core JS files -->
+		<script type="text/javascript" src="../assets/js/plugins/loaders/pace.min.js"></script>
+		<script type="text/javascript" src="../assets/js/core/libraries/jquery.min.js"></script>
+		<script type="text/javascript" src="../assets/js/core/libraries/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../assets/js/plugins/loaders/blockui.min.js"></script>
+		<!-- /core JS files -->
+	
+		<!-- Theme JS files -->
+		<script type="text/javascript" src="../assets/js/plugins/forms/validation/validate.min.js"></script>
+		<script type="text/javascript" src="../assets/js/plugins/forms/styling/uniform.min.js"></script>
+	
+		<script type="text/javascript" src="../assets/js/core/app.js"></script>
+		<script type="text/javascript" src="../assets/js/pages/login_validation.js"></script>
+	
+		<script type="text/javascript" src="../assets/js/plugins/ui/ripple.min.js"></script>
+		<!-- /theme JS files -->
+	
+	</head>
+
+<body class="login-container login-cover">
+
+	<!-- Page container -->
+	<div class="page-container pb-20">
+
+		<!-- Page content -->
+		<div class="page-content">
+
+			<!-- Main content -->
+			<div class="content-wrapper">
+
+				<!-- Form with validation -->
+				<form  #loginform="ngForm" (ngSubmit)="Loginemail(loginform)" class="form-validate">
+					<div class="panel panel-body login-form">
+						<div class="text-center">
+							<div class="icon-object border-slate-300 text-slate-300"><i class="icon-reading"></i></div>
+							<h5 class="content-group">Login com sua conta <small class="display-block">Suas Credenciais</small></h5>
+						</div>
+
+						<div class="form-group has-feedback has-feedback-left">
+							<input type="email" class="form-control" placeholder="Email"  ngModel name="useremail" required="required">
+							<div class="form-control-feedback">
+								<i class="icon-user text-muted"></i>
+							</div>
+						</div>
+
+						<div class="form-group has-feedback has-feedback-left">
+							<input type="password" class="form-control" placeholder="Senha" ngModel name="usersenha" required="required">
+							<div class="form-control-feedback">
+								<i class="icon-lock2 text-muted"></i>
+							</div>
+						</div>
+
+						<div class="form-group login-options">
+							<div class="row">
+								<div class="col-sm-6">
+									<label class="checkbox-inline">
+										<input type="checkbox" class="styled" checked="checked">
+										Lembra senha
+									</label>
+								</div>
+
+								<div class="col-sm-6 text-right">
+									<a routerLink="recuperarsenhalogin">Esqueçeu a Senha</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<button type="submit"class="btn bg-blue btn-block">Entrar <i class="icon-arrow-right14 position-right"></i></button>
+						</div>
+
+						<div class="content-divider text-muted form-group"><span>Faça login com :</span></div>
+						<ul class="list-inline form-group list-inline-condensed text-center">
+							<li><a (click)="Loginface()" class="btn border-indigo text-indigo btn-flat btn-icon btn-rounded"><i class="icon-facebook"></i></a></li>
+							<li><a (click)="Logingoogle()" class="btn border-pink-300 text-pink-300 btn-flat btn-icon btn-rounded"><i class="icon-google"></i></a></li>
+							
+						</ul>
+
+						<div class="content-divider text-muted form-group"><span>Não tem uma conta ?</span></div>
+						<a routerLink="cadastrologin" class="btn btn-default btn-block content-group">Cadastrar</a>
+						<span class="help-block text-center no-margin">By continuing, you're confirming that you've read our <a href="#">Termos &amp; Condições</a> e <a href="#">Politicas de Cooking</a></span>
+					</div>
+				
+				<!-- /form with validation -->
+				</form>
+			</div>
+			<!-- /main content -->
+
+		</div>
+		<!-- /page content -->
+
+	</div>
+	<!-- /page container -->
+
+</body>
+</html>
