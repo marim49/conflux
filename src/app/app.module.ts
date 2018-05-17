@@ -5,8 +5,6 @@ import { AppComponent } from './app.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ImportsComponent } from './imports/imports.component';
-<<<<<<< HEAD
-=======
 import { UserloginComponent } from './userlogin/userlogin.component';
 import { Firebaseconfig } from '../environments/firebaseconfig';
 import {AngularFireAuthModule} from 'angularfire2/auth';
@@ -17,7 +15,6 @@ import { CadastrologinComponent } from './cadastrologin/cadastrologin.component'
 import { RecuperarsenhaloginComponent } from './recuperarsenhalogin/recuperarsenhalogin.component';
 import{routing} from './siterotas';
 
->>>>>>> origin/pablo
 
 
 @NgModule({
@@ -25,14 +22,10 @@ import{routing} from './siterotas';
     AppComponent,
     SidebarComponent,
     NavbarComponent,
-<<<<<<< HEAD
-    ImportsComponent
-=======
     ImportsComponent,
     UserloginComponent,
     CadastrologinComponent,
     RecuperarsenhaloginComponent
->>>>>>> origin/pablo
   ],
   imports: [
     BrowserModule,
