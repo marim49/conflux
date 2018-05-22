@@ -21,6 +21,7 @@ export class UserloginComponent  {
     .then((data)=>{
       console.log();
       alert ('Logado');
+      this.router.navigate(['/sidebar']);
     })
     .catch((error)=>{
       console.log(error);
@@ -33,6 +34,7 @@ export class UserloginComponent  {
     .then((data)=>{
       console.log();
       alert ('Logado');
+      this.router.navigate(['/sidebar']);
     })
     .catch((error)=>{
       console.log(error);

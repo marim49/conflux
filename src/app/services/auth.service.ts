@@ -9,6 +9,7 @@ export class AuthService {
 
   constructor(public afAuth:AngularFireAuth ) {}
   LoginFacebook(){
+    this.afAuth.auth.languageCode="PT-br"
     return this.afAuth.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider());
   }
   LoginGoogle(){
@@ -24,5 +25,6 @@ export class AuthService {
   createloginemail(email,senha){
     return this.afAuth.auth.createUserWithEmailAndPassword(email,senha);
   }
+ 
 
 }
