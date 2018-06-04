@@ -14,6 +14,13 @@ import{AuthService} from './services/auth.service';
 import { CadastrologinComponent } from './cadastrologin/cadastrologin.component';
 import { RecuperarsenhaloginComponent } from './recuperarsenhalogin/recuperarsenhalogin.component';
 import{routing} from './siterotas';
+import { HomeComponent } from './home/home.component';
+import { ClienteComponent } from './cliente/cliente.component';
+import { ProdutoComponent } from './produto/produto.component';
+import { RecebimentoComponent } from './recebimento/recebimento.component';
+import { ServicoComponent } from './servico/servico.component';
+import { FooterComponent } from './footer/footer.component';
+import { GraficosHomeComponent } from './graficos-home/graficos-home.component';
 
 
 
@@ -25,7 +32,14 @@ import{routing} from './siterotas';
     ImportsComponent,
     UserloginComponent,
     CadastrologinComponent,
-    RecuperarsenhaloginComponent
+    RecuperarsenhaloginComponent,
+    HomeComponent,
+    ClienteComponent,
+    ProdutoComponent,
+    RecebimentoComponent,
+    ServicoComponent,
+    FooterComponent,
+    GraficosHomeComponent,
   ],
   imports: [
     BrowserModule,
