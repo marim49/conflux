@@ -23,6 +23,8 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { GraficosHomeComponent } from './graficos-home/graficos-home.component';
 import { CadastroClienteComponent } from './cliente/cadastro-cliente/cadastro-cliente.component';
 import { EditarClienteComponent } from './cliente/editar-cliente/editar-cliente.component';
+import { EditarProdutoComponent } from './produto/editar-produto/editar-produto.component';
+import { CadastroProdutoComponent } from './produto/cadastro-produto/cadastro-produto.component';
 
 
 
@@ -44,6 +46,8 @@ import { EditarClienteComponent } from './cliente/editar-cliente/editar-cliente.
     GraficosHomeComponent,
     CadastroClienteComponent,
     EditarClienteComponent,
+    EditarProdutoComponent,
+    CadastroProdutoComponent,
   ],
   imports: [
     BrowserModule,

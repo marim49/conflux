@@ -40,7 +40,9 @@
         "assets/js/plugins/pickers/daterangepicker.js",
         "assets/js/core/app.js",
         "assets/js/pages/dashboard.js",
-        "assets/js/plugins/ui/ripple.min.js"
+        "assets/js/plugins/ui/ripple.min.js",
+        "assets/js/plugins/notifications/sweet_alert.min.js",
+        "assets/js/pages/datatables_advanced.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

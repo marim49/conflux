@@ -10,6 +10,7 @@ import {HomeComponent} from './home/home.component';
 import { Component } from '@angular/core';
 import {AppComponent}from './app.component';
 import {ClienteComponent} from './cliente/cliente.component'
+import {ProdutoComponent} from './produto/produto.component'
 
 /*Fazendo as rotas das paginas
 lembrar de fazer os imports das paginas criadas
@@ -20,6 +21,7 @@ const paginas: Routes = [
     {path:'recuperarsenhalogin',component:RecuperarsenhaloginComponent},
     {path: 'home', component:HomeComponent},
     {path: 'cliente', component:ClienteComponent},
+    {path: 'produto', component:ProdutoComponent},
    
 
 ];
