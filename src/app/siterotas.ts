@@ -9,8 +9,10 @@ import { ModuleWithProviders } from '@angular/compiler/src/core';
 import {HomeComponent} from './home/home.component';
 import { Component } from '@angular/core';
 import {AppComponent}from './app.component';
-import {ClienteComponent} from './cliente/cliente.component'
-import {ProdutoComponent} from './produto/produto.component'
+import {CadastroClienteComponent} from './cliente/cadastro-cliente/cadastro-cliente.component'
+import {EditarClienteComponent} from './cliente/editar-cliente/editar-cliente.component'
+import {CadastroProdutoComponent} from './produto/cadastro-produto/cadastro-produto.component'
+import {EditarProdutoComponent} from './produto/editar-produto/editar-produto.component'
 
 /*Fazendo as rotas das paginas
 lembrar de fazer os imports das paginas criadas
@@ -20,8 +22,10 @@ const paginas: Routes = [
     {path:'cadastrologin',component:CadastrologinComponent},
     {path:'recuperarsenhalogin',component:RecuperarsenhaloginComponent},
     {path: 'home', component:HomeComponent},
-    {path: 'cliente', component:ClienteComponent},
-    {path: 'produto', component:ProdutoComponent},
+    {path: 'cadastro/cliente', component:CadastroClienteComponent},
+    {path: 'editar/cliente', component:EditarClienteComponent},
+    {path: 'cadastro/produto', component:CadastroProdutoComponent},
+    {path: 'editar/produto', component:EditarProdutoComponent},
    
 
 ];
