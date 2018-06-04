@@ -21,6 +21,7 @@ import { RecebimentoComponent } from './recebimento/recebimento.component';
 import { ServicoComponent } from './servico/servico.component';
 import { FooterComponent } from './footer/footer.component';
 import { GraficosHomeComponent } from './graficos-home/graficos-home.component';
+import { CadastroClienteComponent } from './cadastro-cliente/cadastro-cliente.component';
 
 
 
@@ -40,6 +41,7 @@ import { GraficosHomeComponent } from './graficos-home/graficos-home.component';
     ServicoComponent,
     FooterComponent,
     GraficosHomeComponent,
+    CadastroClienteComponent,
   ],
   imports: [
     BrowserModule,
