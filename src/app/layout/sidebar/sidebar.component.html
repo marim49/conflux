@@ -4,9 +4,9 @@
 <div class="sidebar-user-material">
 							<div class="category-content">
 								<div class="sidebar-user-material-content">
-									<a href="#"><img src="assets/images/placeholder.jpg" class="img-circle img-responsive" alt=""></a>
-									<h6>Juscleide da Silva Baker</h6>
-									<span class="text-size-small">COntagem, MG</span>
+									<a href="#"><img src="{{foto}}" class="img-circle img-responsive" alt=""></a>
+									<h6>{{nomeuser}}</h6>
+									<span class="text-size-small">{{email}}</span>
 								</div>
 															
 								<div class="sidebar-user-material-menu">
@@ -20,7 +20,7 @@
 									<li><a href="#"><i class="icon-coins"></i> <span>Minhas finanças</span></a></li>
 									<li class="divider"></li>
 									<li><a href="#"><i class="icon-cog5"></i> <span>Configurações da conta</span></a></li>
-									<li><a href="#"><i class="icon-switch2"></i> <span>Sair</span></a></li>
+									<li><a (click)="logout()"><i class="icon-switch2"></i> <span>Sair</span></a></li>
 								</ul>
 							</div>
 						</div>
