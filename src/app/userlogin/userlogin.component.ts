@@ -21,7 +21,7 @@ export class UserloginComponent  {
     .then((data)=>{
       console.log();
       alert ('Logado');
-      this.router.navigate(['/sidebar']);
+      this.router.navigate(['/home']);
     })
     .catch((error)=>{
       console.log(error);
@@ -34,7 +34,7 @@ export class UserloginComponent  {
     .then((data)=>{
       console.log();
       alert ('Logado');
-      this.router.navigate(['/sidebar']);
+      this.router.navigate(['/home']);
     })
     .catch((error)=>{
       console.log(error);
@@ -51,7 +51,7 @@ Loginemail(loginform:NgForm){
   .then((data)=>{
     console.log();
     alert ('Logado');
-    this.router.navigate(['/sidebar']);
+    this.router.navigate(['/home']);
     
   })
   .catch((error)=>{

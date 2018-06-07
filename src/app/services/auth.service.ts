@@ -25,6 +25,18 @@ export class AuthService {
   createloginemail(email,senha){
     return this.afAuth.auth.createUserWithEmailAndPassword(email,senha);
   }
+  /*pega os dados do usuario autenticado */
+  getAuth(){
+    return this.afAuth.authState.map(auth=>auth);
+  }
+  /*metodo sair */
+  Sair(saiu){
+    this.afAuth.auth.signOut().then(function() {
+      return saiu=false;
+    }).catch(function(error) {
+     alert(error);
+    });
+  }
  
 
 }

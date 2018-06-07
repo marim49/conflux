@@ -9,17 +9,38 @@ import {AngularFireAuth} from 'angularfire2/auth';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent  {
-  Nome:any;
-  Foto:any;
-  Email:any;
+  public islogin:boolean;
+  public nomeuser:String;
+  public email:String;
+  public foto:any;
 
-
-
-  constructor(private authorizationService:AuthService) {
-    
-    
+  constructor(
+    public authservice:AuthService,
+    private router:Router
+    ) { }
+    logout(){
+      this.authservice.Sair(this.islogin);
+      if(this.islogin==false){
+        this.router.navigate(['']);
+      }
+      
     }
   
+    ngOnInit() {
+      this.authservice.getAuth().subscribe(auth=>{
+        if(auth){
+          this.islogin=true;
+          this.nomeuser=auth.displayName;
+          this.email=auth.email;
+          this.foto=auth.photoURL;
+          
+        }
+        this.islogin=false;
+        
+      }
+      )
+    
+    }
 
    }
 
