@@ -42,66 +42,18 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
+							
+							<tr *ngFor="let p of produtos | async ">
 								<td>1</td>
-								<td> <a href="" data-toggle="modal" data-target="#modal_dados_vertical">Marmitex PQ</a></td>
-								<td>1</td>
-								<td>9,00</td>
-								<td><span class="label label-success">Ativo</span></td>
+								<td> <a href="" data-toggle="modal" data-target="#modal_dados_vertical">{{p.NomeProduto}}</a></td>
+								<td>{{p.QuantidadePadrao}}</td>
+								<td>R${{p.Valor}}</td>
+								<td><span class="label label-success">{{p.Status}}</span></td>
 								<td class="text-center">
 									
 								</td>
 							</tr>
-							<tr>
-								<td>2</td>
-								<td> <a href="" data-toggle="modal" data-target="#modal_dados_vertical">Marmitex GR</a></td>
-								<td>1</td>
-								<td>12,00</td>
-								<td><span class="label label-success">Ativo</span></td>
-								<td class="text-center">
-									
-								</td>
-							</tr>
-							<tr>
-								<td>3</td>
-								<td> <a href="" data-toggle="modal" data-target="#modal_dados_vertical">Acrésimo de Carne</a></td>
-								<td>2</td>
-								<td>3,50</td>
-								<td><span class="label label-success">Ativo</span></td>
-								<td class="text-center">
-									
-								</td>
-							</tr>
-							<tr>
-								<td>4</td>
-								<td> <a href="" data-toggle="modal" data-target="#modal_dados_vertical">Suco Natural Laranja</a></td>
-								<td>300ml</td>
-								<td>4,00</td>
-								<td><span class="label label-success">Ativo</span></td>
-								<td class="text-center">
-									
-								</td>
-							</tr>
-							<tr>
-								<td>5</td>
-								<td> <a href="" data-toggle="modal" data-target="#modal_dados_vertical">Suco Natural Maracujá</a></td>
-								<td>300ml</td>
-								<td>4,00</td>
-								<td><span class="label label-danger">Inativo</span></td>
-								<td class="text-center">
-									
-								</td>
-							</tr>
-							<tr>
-								<td>6</td>
-								<td> <a href="" data-toggle="modal" data-target="#modal_dados_vertical">Coca-Cola</a></td>
-								<td>2Litros</td>
-								<td>6,50</td>
-								<td><span class="label label-success">Ativo</span></td>
-								<td class="text-center">
-									
-								</td>
-							</tr>
+							
 						
 							
 						</tbody>
@@ -117,18 +69,18 @@
 								<h5 class="modal-title">Cadastrar Produto</h5>
 							</div>
 
-							<form action="#">
+							<form #cadastroproduto="ngForm" (ngSubmit)="gravaproduto(cadastroproduto)">
 								<div class="modal-body">
 									<div class="form-group">
 										<div class="row">
 											<div class="col-sm-6">
 												<label>Nome do Produto</label>
-												<input type="text" placeholder="Ex.: Caixa" class="form-control">
+												<input type="text" placeholder="Ex.: Caixa" ngModel name="nomeproduto"class="form-control">
 											</div>
 
 											<div class="col-sm-6">
 												<label>Unidade de Medida</label>
-												<input type="text" placeholder="Ex.: PC, UN, MT, L, ML" class="form-control">
+												<input type="text" placeholder="Ex.: PC, UN, MT, L, ML" ngModel name="unidademedida" class="form-control">
 											</div>
 										</div>
 									</div>
@@ -137,12 +89,12 @@
 										<div class="row">
 											<div class="col-sm-6">
 												<label>Quantidade Padrão</label>
-												<input type="text" placeholder="Ex.: Pacotes" class="form-control">
+												<input type="text" placeholder="Ex.: Pacotes" ngModel name="qtdpadrao" class="form-control">
 											</div>
 
 											<div class="col-sm-6">
 												<label>Valor</label>
-												<input type="text" placeholder="Ex.: R$0,00" class="form-control">
+												<input type="text" placeholder="Ex.: R$0,00" ngModel name="valor"class="form-control">
 											</div>
 										</div>
 									</div>
@@ -154,12 +106,10 @@
 											<div class="col-sm-6">
 												<label>Status</label>
 												<div class="form-group">
-													<select name="select" class="form-control input-lg">
-					                                    <option value="opt1">Selecione</option>
-					                                    <option value="opt2">Ativo</option>
-					                                    <option value="opt3">Inativo</option>
-					                                    												
-					                                </select>
+													<select [(ngModel)]="opstatus" name="status " class="form-control input-lg">
+					                                    <option  value="Ativo">Ativo</option>
+					                                    <option  value="Inativo">Inativo</option>
+					                                 </select>
 												</div>
 											</div>
 											
