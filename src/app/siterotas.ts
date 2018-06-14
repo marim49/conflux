@@ -22,9 +22,9 @@ const paginas: Routes = [
     {path:'cadastrologin',component:CadastrologinComponent},
     {path:'recuperarsenhalogin',component:RecuperarsenhaloginComponent},
     {path: 'home', component:HomeComponent},
-    {path: 'cadastro/cliente', component:CadastroClienteComponent},
+    {path: 'home/cadastro/cliente', component:CadastroClienteComponent},
     {path: 'editar/cliente', component:EditarClienteComponent},
-    {path: 'cadastro/produto', component:CadastroProdutoComponent},
+    {path: 'home/cadastro/produto', component:CadastroProdutoComponent},
     {path: 'editar/produto', component:EditarProdutoComponent},
    
 

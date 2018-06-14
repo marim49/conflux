@@ -1,4 +1,4 @@
-    <app-navbar></app-navbar>
+<app-navbar></app-navbar>
  <!-- Page container -->
 	<div class="page-container">
 		<!-- Page content -->
@@ -73,37 +73,60 @@
 								<div class="modal-body">
 									<div class="form-group">
 										<div class="row">
+											<div class="col-sm-4">
+											
+												<label>Tipo:</label>
+													<select [(ngModel)]="opserpro" name="opserpro " class="form-control input-lg">
+															<option  value="Produto">Produto</option>
+															<option  value="Servico">Seviço</option>
+													</select>
+											</div>
 											<div class="col-sm-6">
-												<label>Nome do Produto</label>
-												<input type="text" placeholder="Ex.: Caixa" ngModel name="nomeproduto"class="form-control">
+											
+												<label>Nome do Produto/Nome Serviço</label>
+												<input type="text" placeholder="Ex.: HD Externo 500gb/Instalação de Software" ngModel name="nomeproduto"class="form-control">
+										    </div>
+									  </div>
+								      </div>
+							          <!--Aqui acaba primeiro form group-->
+											
+												
+										
+									  <!--Aqui começa form group-->
+									<div class="form-group">
+										<div class="row">
+											<div class="col-sm-4">
+													<label>Preço Venda:</label>
+													<input type="text" placeholder="Ex.: R$0,00" ngModel name="precovenda"class="form-control">
 											</div>
 
-											<div class="col-sm-6">
-												<label>Unidade de Medida</label>
-												<input type="text" placeholder="Ex.: PC, UN, MT, L, ML" ngModel name="unidademedida" class="form-control">
+											<div class="col-sm-4">
+												<label>Preço Custo:</label>
+												<input type="text" placeholder="Ex.: R$0,00" ngModel name="precocusto"class="form-control">
 											</div>
 										</div>
 									</div>
-
+									<!--aqui termina form group-->
+									<!--Aqui começa form group-->
 									<div class="form-group">
 										<div class="row">
 											<div class="col-sm-6">
-												<label>Quantidade Padrão</label>
-												<input type="text" placeholder="Ex.: Pacotes" ngModel name="qtdpadrao" class="form-control">
+												<label > Grupo:</label>
+												<input type="text" placeholder="Ex: informática " ngModel name="grupo" class="form-control">
 											</div>
-
-											<div class="col-sm-6">
-												<label>Valor</label>
-												<input type="text" placeholder="Ex.: R$0,00" ngModel name="valor"class="form-control">
+											<div class="col-sm-4">
+												<label >Estoque:</label>
+												<input type="text" placeholder="Ex: 20" ngModel name="estoque" class="form-control">
 											</div>
 										</div>
 									</div>
+									<!--Aqui termina form group-->
 
-									
+									<!--Aqui começa form group-->
 									<div class="form-group">
 										<div class="row">
 																						
-											<div class="col-sm-6">
+											<div class="col-sm-4">
 												<label>Status</label>
 												<div class="form-group">
 													<select [(ngModel)]="opstatus" name="status " class="form-control input-lg">
@@ -112,9 +135,15 @@
 					                                 </select>
 												</div>
 											</div>
+											<div class="col-sm-6">
+													<label>Codigo de Barra</label>
+													<input type="text" placeholder="Ex: 00003432402349234" ngModel name="codbarra"class="form-control">
+
+											</div>
 											
 										</div>
 									</div>
+									<!--Aqui termina form group-->
 								</div>
 
 								<div class="modal-footer">

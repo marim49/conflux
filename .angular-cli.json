@@ -24,7 +24,8 @@
         "assets/css/bootstrap.css",
         "assets/css/core.css",
         "assets/css/components.css",
-        "assets/css/colors.css"   
+        "assets/css/colors.css",
+        "../node_modules/ngx-toastr/toastr.css"   
       ],
       "scripts": [
         "assets/js/plugins/loaders/pace.min.js",
