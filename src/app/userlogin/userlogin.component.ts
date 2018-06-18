@@ -3,6 +3,7 @@ import {AuthService} from '../services/auth.service';
 import{dadosuser} from '../models/dadosuser';
 import { NgForm } from '@angular/forms';
 import {Router,ActivatedRoute} from '@angular/router';
+import {ToastrService} from 'ngx-toastr';
 
 
 
@@ -14,18 +15,22 @@ import {Router,ActivatedRoute} from '@angular/router';
 export class UserloginComponent  {
 
   
-  constructor(private authorizationService:AuthService,private router:Router) { }
+  constructor(
+    private authorizationService:AuthService,
+    private router:Router,
+    private toastr:ToastrService
+  ) { }
   Logado:boolean=false;
   Loginface(){
     this.authorizationService.LoginFacebook()
     .then((data)=>{
       console.log();
-      alert ('Logado');
-      this.router.navigate(['/home']);
+      this.toastr.success("Login Realizado com Sucesso !");
+      this.router.navigateByUrl('/home');
     })
     .catch((error)=>{
       console.log(error);
-      alert('Não Logado');
+      this.toastr.error("Seu Email ou Senha Inválido ! ",error);
     })
 
   }
@@ -33,12 +38,13 @@ export class UserloginComponent  {
     this.authorizationService.LoginGoogle()
     .then((data)=>{
       console.log();
-      alert ('Logado');
-      this.router.navigate(['/home']);
+      this.toastr.success("Login Realizado com Sucesso !");
+      setTimeout(() => this.router.navigateByUrl('/home'));
+      
     })
     .catch((error)=>{
       console.log(error);
-      alert('Não Logado');
+      this.toastr.error("Seu Email ou Senha Inválido ! ",error);
     })
 
   
@@ -50,13 +56,13 @@ Loginemail(loginform:NgForm){
   this.authorizationService.LoginEmail(email,senha)
   .then((data)=>{
     console.log();
-    alert ('Logado');
-    this.router.navigate(['/home']);
+    this.toastr.success("Login Realizado com Sucesso !");
+    this.router.navigateByUrl('/home');
     
   })
   .catch((error)=>{
     console.log(error);
-    alert('Não Logado');
+    this.toastr.error("Seu Email ou Senha Inválido ! ",error);
   })
   
   

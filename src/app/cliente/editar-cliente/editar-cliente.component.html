@@ -3,7 +3,7 @@
 	<div class="page-container">
 		<!-- Page content -->
 		<div class="page-content">
-    <!-- Main sidebar -->
+    	<!-- Main sidebar -->
 			<div class="sidebar sidebar-main sidebar-default">
 				<app-sidebar></app-sidebar>
 			</div>
@@ -39,306 +39,28 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td>1</td>
-								<td><a href="#">Lorrany Amorim</a></td>
-								<td>99999999900</td>
-								<td>31 998515217</td>
-								<td><span class="label label-success">Ativo</span></td>
+
+							<!-- Loop para exibição de clientes -->
+							<tr *ngFor="let c of clientes">
+								<td>{{c.id}}</td>
+								<td>{{c.nome}}</td>
+								<td>{{c.cpf}}</td>
+								<td>{{c.telefone}}</td>
+								<td><span class="label label-success">{{c.status}}</span></td>
 								<td class="text-center">
 									<ul class="icons-list">
 										<li class="dropdown">
-										
+												
 											<ul class="icons-list">
-											<li class="text-primary-600" ><a href="#"><i class="icon-pencil7" data-toggle="modal" data-target="#modal_form_vertical"></i></a></li>
-											<li class="text-danger-600"  ><a href="#"><i class="icon-trash" data-toggle="modal" data-target="#modal_theme_danger"></i></a></li>
-																	
-											
+											<li class="text-primary-600" ><a class="icon-pencil7" data-toggle="modal" data-target="#modal_form_vertical"></a></li>
+											<li class="text-danger-600"  ><a class="icon-trash" data-toggle="modal" data-target="#modal_theme_danger"></a></li>																		
+													
 										</ul>
 										</li>
 									</ul>
 								</td>
 							</tr>
-							<tr>
-								<td>2</td>
-								<td><a href="#">Lorrany Amorim</a></td>
-								<td>99999999900</td>
-								<td>31 998515217</td>
-								<td><span class="label label-success">Ativo</span></td>
-								<td class="text-center">
-									<ul class="icons-list">
-										<li class="dropdown">
-										
-											<ul class="icons-list">
-											<li class="text-primary-600" ><a href="#"><i class="icon-pencil7" data-toggle="modal" data-target="#modal_form_vertical"></i></a></li>
-											<li class="text-danger-600"  ><a href="#"><i class="icon-trash" data-toggle="modal" data-target="#modal_theme_danger"></i></a></li>
-																	
-											
-										</ul>
-										</li>
-									</ul>
-								</td>
-							</tr>
-							<tr>
-								<td>3</td>
-								<td><a href="#">Lorrany Amorim</a></td>
-								<td>99999999900</td>
-								<td>31 998515217</td>
-								<td><span class="label label-success">Ativo</span></td>
-								<td class="text-center">
-									<ul class="icons-list">
-										<li class="dropdown">
-										
-											<ul class="icons-list">
-											<li class="text-primary-600" ><a href="#"><i class="icon-pencil7" data-toggle="modal" data-target="#modal_form_vertical"></i></a></li>
-											<li class="text-danger-600"  ><a href="#"><i class="icon-trash" data-toggle="modal" data-target="#modal_theme_danger"></i></a></li>
-																	
-											
-										</ul>
-										</li>
-									</ul>
-								</td>
-							</tr>
-							<tr>
-								<td>4</td>
-								<td><a href="#">Lorrany Amorim</a></td>
-								<td>99999999900</td>
-								<td>31 998515217</td>
-								<td><span class="label label-success">Ativo</span></td>
-								<td class="text-center">
-									<ul class="icons-list">
-										<li class="dropdown">
-										
-											<ul class="icons-list">
-											<li class="text-primary-600" ><a href="#"><i class="icon-pencil7" data-toggle="modal" data-target="#modal_form_vertical"></i></a></li>
-											<li class="text-danger-600"  ><a href="#"><i class="icon-trash" data-toggle="modal" data-target="#modal_theme_danger"></i></a></li>
-																	
-											
-										</ul>
-										</li>
-									</ul>
-								</td>
-							</tr>
-							<tr>
-								<td>5</td>
-								<td><a href="#">Lorrany Amorim</a></td>
-								<td>99999999900</td>
-								<td>31 998515217</td>
-								<td><span class="label label-success">Ativo</span></td>
-								<td class="text-center">
-									<ul class="icons-list">
-										<li class="dropdown">
-										
-											<ul class="icons-list">
-											<li class="text-primary-600" ><a href="#"><i class="icon-pencil7" data-toggle="modal" data-target="#modal_form_vertical"></i></a></li>
-											<li class="text-danger-600"  ><a href="#"><i class="icon-trash" data-toggle="modal" data-target="#modal_theme_danger"></i></a></li>
-																	
-											
-										</ul>
-										</li>
-									</ul>
-								</td>
-							</tr>
-							<tr>
-								<td>6</td>
-								<td><a href="#">Lorrany Amorim</a></td>
-								<td>99999999900</td>
-								<td>31 998515217</td>
-								<td><span class="label label-success">Ativo</span></td>
-								<td class="text-center">
-									<ul class="icons-list">
-										<li class="dropdown">
-										
-											<ul class="icons-list">
-											<li class="text-primary-600" ><a href="#"><i class="icon-pencil7" data-toggle="modal" data-target="#modal_form_vertical"></i></a></li>
-											<li class="text-danger-600"  ><a href="#"><i class="icon-trash" data-toggle="modal" data-target="#modal_theme_danger"></i></a></li>
-																	
-											
-										</ul>
-										</li>
-									</ul>
-								</td>
-							</tr>
-							<tr>
-								<td>7</td>
-								<td><a href="#">Lorrany Amorim</a></td>
-								<td>99999999900</td>
-								<td>31 998515217</td>
-								<td><span class="label label-success">Ativo</span></td>
-								<td class="text-center">
-									<ul class="icons-list">
-										<li class="dropdown">
-										
-											<ul class="icons-list">
-											<li class="text-primary-600" ><a href="#"><i class="icon-pencil7" data-toggle="modal" data-target="#modal_form_vertical"></i></a></li>
-											<li class="text-danger-600"  ><a href="#"><i class="icon-trash" data-toggle="modal" data-target="#modal_theme_danger"></i></a></li>
-																	
-											
-										</ul>
-										</li>
-									</ul>
-								</td>
-							</tr>
-					<tr>
-								<td>8</td>
-								<td><a href="#">Lorrany Amorim</a></td>
-								<td>99999999900</td>
-								<td>31 998515217</td>
-								<td><span class="label label-success">Ativo</span></td>
-								<td class="text-center">
-									<ul class="icons-list">
-										<li class="dropdown">
-										
-											<ul class="icons-list">
-											<li class="text-primary-600" ><a href="#"><i class="icon-pencil7" data-toggle="modal" data-target="#modal_form_vertical"></i></a></li>
-											<li class="text-danger-600"  ><a href="#"><i class="icon-trash" data-toggle="modal" data-target="#modal_theme_danger"></i></a></li>
-																	
-											
-										</ul>
-										</li>
-									</ul>
-								</td>
-							</tr>
-							<tr>
-								<td>9</td>
-								<td><a href="#">Lorrany Amorim</a></td>
-								<td>99999999900</td>
-								<td>31 998515217</td>
-								<td><span class="label label-success">Ativo</span></td>
-								<td class="text-center">
-									<ul class="icons-list">
-										<li class="dropdown">
-										
-											<ul class="icons-list">
-											<li class="text-primary-600" ><a href="#"><i class="icon-pencil7" data-toggle="modal" data-target="#modal_form_vertical"></i></a></li>
-											<li class="text-danger-600"  ><a href="#"><i class="icon-trash" data-toggle="modal" data-target="#modal_theme_danger"></i></a></li>
-																	
-											
-										</ul>
-										</li>
-									</ul>
-								</td>
-							</tr>
-							<tr>
-								<td>10</td>
-								<td><a href="#">Lorrany Amorim</a></td>
-								<td>99999999900</td>
-								<td>31 998515217</td>
-								<td><span class="label label-success">Ativo</span></td>
-								<td class="text-center">
-									<ul class="icons-list">
-										<li class="dropdown">
-										
-											<ul class="icons-list">
-											<li class="text-primary-600" ><a href="#"><i class="icon-pencil7" data-toggle="modal" data-target="#modal_form_vertical"></i></a></li>
-											<li class="text-danger-600"  ><a href="#"><i class="icon-trash" data-toggle="modal" data-target="#modal_theme_danger"></i></a></li>
-																	
-											
-										</ul>
-										</li>
-									</ul>
-								</td>
-							</tr>
-							<tr>
-								<td>11</td>
-								<td><a href="#">Lorrany Amorim</a></td>
-								<td>99999999900</td>
-								<td>31 998515217</td>
-								<td><span class="label label-success">Ativo</span></td>
-								<td class="text-center">
-									<ul class="icons-list">
-										<li class="dropdown">
-										
-											<ul class="icons-list">
-											<li class="text-primary-600" ><a href="#"><i class="icon-pencil7" data-toggle="modal" data-target="#modal_form_vertical"></i></a></li>
-											<li class="text-danger-600"  ><a href="#"><i class="icon-trash" data-toggle="modal" data-target="#modal_theme_danger"></i></a></li>
-																	
-											
-										</ul>
-										</li>
-									</ul>
-								</td>
-							</tr>
-							<tr>
-								<td>12</td>
-								<td><a href="#">Lorrany Amorim</a></td>
-								<td>99999999900</td>
-								<td>31 998515217</td>
-								<td><span class="label label-success">Ativo</span></td>
-								<td class="text-center">
-									<ul class="icons-list">
-										<li class="dropdown">
-										
-											<ul class="icons-list">
-											<li class="text-primary-600" ><a href="#"><i class="icon-pencil7" data-toggle="modal" data-target="#modal_form_vertical"></i></a></li>
-											<li class="text-danger-600"  ><a href="#"><i class="icon-trash" data-toggle="modal" data-target="#modal_theme_danger"></i></a></li>
-																	
-											
-										</ul>
-										</li>
-									</ul>
-								</td>
-							</tr>
-							<tr>
-								<td>13</td>
-								<td><a href="#">Lorrany Amorim</a></td>
-								<td>99999999900</td>
-								<td>31 998515217</td>
-								<td><span class="label label-success">Ativo</span></td>
-								<td class="text-center">
-									<ul class="icons-list">
-										<li class="dropdown">
-										
-											<ul class="icons-list">
-											<li class="text-primary-600" ><a href="#"><i class="icon-pencil7" data-toggle="modal" data-target="#modal_form_vertical"></i></a></li>
-											<li class="text-danger-600"  ><a href="#"><i class="icon-trash" data-toggle="modal" data-target="#modal_theme_danger"></i></a></li>
-																	
-											
-										</ul>
-										</li>
-									</ul>
-								</td>
-							</tr>
-							<tr>
-								<td>14</td>
-								<td><a href="#">Lorrany Amorim</a></td>
-								<td>99999999900</td>
-								<td>31 998515217</td>
-								<td><span class="label label-success">Ativo</span></td>
-								<td class="text-center">
-									<ul class="icons-list">
-										<li class="dropdown">
-										
-											<ul class="icons-list">
-											<li class="text-primary-600" ><a href="#"><i class="icon-pencil7" data-toggle="modal" data-target="#modal_form_vertical"></i></a></li>
-											<li class="text-danger-600"  ><a href="#"><i class="icon-trash" data-toggle="modal" data-target="#modal_theme_danger"></i></a></li>
-																	
-											
-										</ul>
-										</li>
-									</ul>
-								</td>
-							</tr>
-							<tr>
-								<td>15</td>
-								<td><a href="#">Lorrany Amorim</a></td>
-								<td>99999999900</td>
-								<td>31 998515217</td>
-								<td><span class="label label-success">Ativo</span></td>
-								<td class="text-center">
-									<ul class="icons-list">
-										<li class="dropdown">
-										
-											<ul class="icons-list">
-											<li class="text-primary-600" ><a href="#"><i class="icon-pencil7" data-toggle="modal" data-target="#modal_form_vertical"></i></a></li>
-											<li class="text-danger-600"  ><a href="#"><i class="icon-trash" data-toggle="modal" data-target="#modal_theme_danger"></i></a></li>
-																	
-											
-										</ul>
-										</li>
-									</ul>
-								</td>
-							</tr>
+
 						</tbody>
 					</table>
 				</div>
@@ -359,7 +81,7 @@
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-link" data-dismiss="modal">Não</button>
-								<button type="button" class="btn btn-danger">SIM!</button>
+								<button type="button" class="btn btn-danger">Sim</button>
 							</div>
 						</div>
 					</div>
@@ -430,7 +152,6 @@
 											<div class="col-sm-6">
 												<label>Número</label>
 												<input type="text" placeholder="Ex.: 111" class="form-control">
-												<
 											</div>
 
 											<div class="col-sm-6">
@@ -446,7 +167,7 @@
 											
 											<div class="col-sm-6">
 												<label>UF</label>
-												<div class="form-group">
+												<!--(comentei pq achei q n precisava)div class="form-group"-->
 													<select name="select" class="form-control input-lg">
 					                                    <option value="opt1">Selecione</option>
 					                                    <option value="opt2">AC</option>
@@ -455,34 +176,33 @@
 					                                    <option value="opt5">AM</option>
 					                                    <option value="opt6">BA</option>
 					                                    <option value="opt7">CE</option>
-					                                    <option value="opt8">DF</option>
-														<option value="opt8">ES</option>
-														<option value="opt8">GO</option>
-														<option value="opt8">MA</option>
-														<option value="opt8">MT</option>
-														<option value="opt8">MS</option>
-														<option value="opt8">MG</option>
-														<option value="opt8">PA</option>
-														<option value="opt8">PB</option>
-														<option value="opt8">PR</option>
-														<option value="opt8">PE</option>
-														<option value="opt8">PI</option>
-														<option value="opt8">RJ</option>
-														<option value="opt8">RN</option>
-														<option value="opt8">RS</option>
-														<option value="opt8">RO</option>
-														<option value="opt8">RR</option>
-														<option value="opt8">SC</option>
-														<option value="opt8">SP</option>
-														<option value="opt8">SE</option>
-														<option value="opt8">TO</option>
-													
+					                                    <option value="opt9">DF</option>
+														<option value="opt10">ES</option>
+														<option value="opt11">GO</option>
+														<option value="opt12">MA</option>
+														<option value="opt13">MT</option>
+														<option value="opt14">MS</option>
+														<option value="opt15">MG</option>
+														<option value="opt16">PA</option>
+														<option value="opt17">PB</option>
+														<option value="opt18">PR</option>
+														<option value="opt19">PE</option>
+														<option value="opt20">PI</option>
+														<option value="opt21">RJ</option>
+														<option value="opt22">RN</option>
+														<option value="opt23">RS</option>
+														<option value="opt24">RO</option>
+														<option value="opt25">RR</option>
+														<option value="opt26">SC</option>
+														<option value="opt27">SP</option>
+														<option value="opt28">SE</option>
+														<option value="opt29">TO</option>													
 					                                </select>
-												</div>
+												<!--/div-->
 											</div>
 											
-											<div class="form-group">
-										<div class="row">
+										<!--(comentei pq achei q n precisava)div class="form-group"-->
+										<!--(comentei pq achei q n precisava)div class="row"-->
 																						
 											<div class="col-sm-6">
 												<label>Status</label>
@@ -490,14 +210,13 @@
 													<select name="select" class="form-control input-lg">
 					                                    <option value="opt1">Selecione</option>
 					                                    <option value="opt2">Ativo</option>
-					                                    <option value="opt3">Inativo</option>
-					                                    												
+					                                    <option value="opt3">Inativo</option>					                                    												
 					                                </select>
 												</div>
 											</div>
 											
-										</div>
-									</div>
+										<!--/div-->
+										<!--/div-->
 											
 										</div>
 									</div>
@@ -516,6 +235,6 @@
 			<!-- /main content -->
 		</div>
 		<!-- /page content -->
-  <!-- Footer -->
+  	<!-- Footer -->
 	<app-footer></app-footer>
 	<!-- /footer -->

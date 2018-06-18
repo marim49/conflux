@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditarClienteComponent implements OnInit {
 
-  constructor() { }
+  clientes = [];
+  constructor() 
+  {    
+      let item = {
+        id : '1',
+        nome: "Thaís",
+        cpf : "99999999900",
+        telefone : "31 998515217",
+        status : "ATIVO"
+      };
+      for(var i = 0; i < 10; i++)
+      {
+        this.clientes.push(item);
+      }
+
+   }
 
   ngOnInit() {
   }
-
 }

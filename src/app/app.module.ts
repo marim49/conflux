@@ -25,6 +25,8 @@ import { CadastroClienteComponent } from './cliente/cadastro-cliente/cadastro-cl
 import { EditarClienteComponent } from './cliente/editar-cliente/editar-cliente.component';
 import { EditarProdutoComponent } from './produto/editar-produto/editar-produto.component';
 import { CadastroProdutoComponent } from './produto/cadastro-produto/cadastro-produto.component';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {ToastrModule} from "ngx-toastr";
 
 
 
@@ -55,7 +57,9 @@ import { CadastroProdutoComponent } from './produto/cadastro-produto/cadastro-pr
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     FormsModule,
-    routing
+    routing,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
