@@ -39,12 +39,12 @@ export class UserloginComponent  {
     .then((data)=>{
       console.log();
       this.toastr.success("Login Realizado com Sucesso !");
-      setTimeout(() => this.router.navigateByUrl('/home'));
+      this.router.navigateByUrl('/home');
       
     })
     .catch((error)=>{
       console.log(error);
-      this.toastr.error("Seu Email ou Senha Inválido ! ",error);
+      this.toastr.error("Email ou Senha Inválido ! ",error);
     })
 
   
@@ -62,7 +62,7 @@ Loginemail(loginform:NgForm){
   })
   .catch((error)=>{
     console.log(error);
-    this.toastr.error("Seu Email ou Senha Inválido ! ",error);
+    this.toastr.error(" Email ou Senha Inválido ! ",error);
   })
   
   

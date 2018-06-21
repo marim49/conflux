@@ -39,11 +39,11 @@ export class CadastroProdutoComponent implements OnInit {
   gravaproduto(cadastroproduto:NgForm)
   {
     this.angularfire.list("Produtos").push({
-    IDProduto:(this.idproduto+1),
+    CodProduto:(this.idproduto+1),
     Tipo: this.opserpro,
-    NomeProdutoServiço:cadastroproduto.form.controls.nomeproduto.value,
-    PreçoVenda: cadastroproduto.form.controls.precovenda.value,
-    PreçoCusto: cadastroproduto.form.controls.precocusto.value,
+    NomeProdutoServico:cadastroproduto.form.controls.nomeproduto.value,
+    PrecoVenda: cadastroproduto.form.controls.precovenda.value,
+    PrecoCusto: cadastroproduto.form.controls.precocusto.value,
     Grupo: cadastroproduto.form.controls.grupo.value,
     Estoque: cadastroproduto.form.controls.estoque.value,
     Status:this.opstatus,

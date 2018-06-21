@@ -1,67 +1,90 @@
 <app-navbar></app-navbar>
- <!-- Page container -->
-	<div class="page-container">
-		<!-- Page content -->
-		<div class="page-content">
-    <!-- Main sidebar -->
-			<div class="sidebar sidebar-main sidebar-default">
-				<app-sidebar></app-sidebar>
-			</div>
-			<!-- /main sidebar -->
-			<!-- Main content -->
-<div class="content-wrapper">
-	<!-- Page length options -->
-	<div class="panel panel-flat">
-					<div class="panel-heading">
-						<h5 class="panel-title">Consultar Produtos</h5>
-						<div class="heading-elements">
-							
-							<button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#modal_form_vertical">Cadastrar Produto <i class=" icon-diff-added position-right"></i></button>
-							
-							<button type="button" class="btn btn-success">Editar/Eliminar Produto<i class=" icon-diff-removed position-right"></i><a href="editar_eliminar_cliente.html"></a></button>
-		                		
-		                	
-	                	</div>
-          
+<!-- Page container -->
+<div class="page-container">
+	<!-- Page content -->
+	<div class="page-content">
+		<!-- Main sidebar -->
+		<div class="sidebar sidebar-main sidebar-default">
+			<app-sidebar></app-sidebar>
+		</div>
+		<!-- /main sidebar -->
+		<!-- Main content -->
+		<div class="content-wrapper">
+			<!-- Page length options -->
+			<div class="panel panel-flat">
+				<div class="panel-heading">
+					<h5 class="panel-title">Consultar Produtos</h5>
+					<div class="heading-elements">
+
+						<button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#modal_form_vertical">Cadastrar Produto
+							<i class=" icon-diff-added position-right"></i>
+						</button>
+
+						<button type="button" class="btn btn-success">Editar/Eliminar Produto
+							<i class=" icon-diff-removed position-right"></i>
+							<a href="editar_eliminar_cliente.html"></a>
+						</button>
+
+
 					</div>
 
-					<div class="panel-body">
-						
-					
+				</div>
 
-					<table class="table datatable-show-all">
+				<div class="panel-body">
+
+
+
+					<table class="table datatable-show-all" width="80%">
 						<thead>
 							<tr>
-							<th>Código do Produto</th>
+								<th>Código do Produto</th>
 								<th>Nome do Produto</th>
-								<th>Quantidade Padrão</th>
-								<th>Valor</th>
-								<th>Status</th>
-								
-								
+								<th>Tipo</th>
+								<th>Preço Venda</th>
+								<th>Preço Custo</th>
+								<th>Grupo</th>
+								<th>Estoque</th>
+								<th>Código de Barras</th>
+								<th>Disponibilidade</th>
+
+
 							</tr>
 						</thead>
 						<tbody>
-							
+
 							<tr *ngFor="let p of produtos | async ">
-								<td>1</td>
-								<td> <a href="" data-toggle="modal" data-target="#modal_dados_vertical">{{p.NomeProduto}}</a></td>
-								<td>{{p.QuantidadePadrao}}</td>
-								<td>R${{p.Valor}}</td>
-								<td><span class="label label-success">{{p.Status}}</span></td>
-								<td class="text-center">
-									
+								<td>{{p.CodProduto}}</td>
+								<td>{{p.NomeProdutoServico}}</td>
+								<td>{{p.Tipo}}</td>
+								<td>R${{p.PrecoVenda}}</td>
+								<td>R${{p.PrecoCusto}}</td>
+								<td> {{p.Grupo}}</td>
+								<td>{{p.Estoque}}</td>
+								<td>{{p.CodigoBarras}}</td>
+								<td>
+									<span class="label label-success">{{p.Status}}</span>
+								</td>
+								<td>
+									<a href="#">
+										<i class="icon-pencil7"></i>
+									</a>
+								</td>
+								<td>
+									<a href="#">
+										<i class="icon-trash"></i>
+									</a>
+
 								</td>
 							</tr>
-							
-						
-							
+
+
+
 						</tbody>
 					</table>
-	</div>
-	<!-- /page length options -->
-	<!-- modal cadastro -->
-	<div id="modal_form_vertical" class="modal fade">
+				</div>
+				<!-- /page length options -->
+				<!-- modal cadastro -->
+				<div id="modal_form_vertical" class="modal fade">
 					<div class="modal-dialog">
 						<div class="modal-content">
 							<div class="modal-header">
@@ -73,36 +96,41 @@
 								<div class="modal-body">
 									<div class="form-group">
 										<div class="row">
+
 											<div class="col-sm-4">
-											
+												<label>Codigo do Produto</label>
+												<input type="text" name="codproduto" ngModel class="form-control input-sm" required placeholder="Ex: 01">
+											</div>
+											<div class="col-sm-2">
+
 												<label>Tipo:</label>
-													<select [(ngModel)]="opserpro" name="opserpro " class="form-control input-lg">
-															<option  value="Produto">Produto</option>
-															<option  value="Servico">Seviço</option>
-													</select>
+												<select [(ngModel)]="opserpro" name="opserpro " required class="form-control input-lg">
+													<option value="Produto">Produto</option>
+													<option value="Servico">Seviço</option>
+												</select>
 											</div>
 											<div class="col-sm-6">
-											
+
 												<label>Nome do Produto/Nome Serviço</label>
-												<input type="text" placeholder="Ex.: HD Externo 500gb/Instalação de Software" ngModel name="nomeproduto"class="form-control">
-										    </div>
-									  </div>
-								      </div>
-							          <!--Aqui acaba primeiro form group-->
-											
-												
-										
-									  <!--Aqui começa form group-->
+												<input type="text" placeholder="Ex.: HD Externo 500gb/Instalação de Software" ngModel name="nomeproduto" required class="form-control input-lg">
+											</div>
+										</div>
+									</div>
+									<!--Aqui acaba primeiro form group-->
+
+
+
+									<!--Aqui começa form group-->
 									<div class="form-group">
 										<div class="row">
 											<div class="col-sm-4">
-													<label>Preço Venda:</label>
-													<input type="text" placeholder="Ex.: R$0,00" ngModel name="precovenda"class="form-control">
+												<label>Preço Venda:</label>
+												<input type="text" placeholder="Ex.: R$0,00" ngModel name="precovenda" class="form-control">
 											</div>
 
 											<div class="col-sm-4">
 												<label>Preço Custo:</label>
-												<input type="text" placeholder="Ex.: R$0,00" ngModel name="precocusto"class="form-control">
+												<input type="text" placeholder="Ex.: R$0,00" ngModel name="precocusto" class="form-control">
 											</div>
 										</div>
 									</div>
@@ -111,11 +139,11 @@
 									<div class="form-group">
 										<div class="row">
 											<div class="col-sm-6">
-												<label > Grupo:</label>
+												<label> Grupo:</label>
 												<input type="text" placeholder="Ex: informática " ngModel name="grupo" class="form-control">
 											</div>
 											<div class="col-sm-4">
-												<label >Estoque:</label>
+												<label>Estoque:</label>
 												<input type="text" placeholder="Ex: 20" ngModel name="estoque" class="form-control">
 											</div>
 										</div>
@@ -125,22 +153,22 @@
 									<!--Aqui começa form group-->
 									<div class="form-group">
 										<div class="row">
-																						
+
 											<div class="col-sm-4">
 												<label>Status</label>
 												<div class="form-group">
 													<select [(ngModel)]="opstatus" name="status " class="form-control input-lg">
-					                                    <option  value="Ativo">Ativo</option>
-					                                    <option  value="Inativo">Inativo</option>
-					                                 </select>
+														<option value="Ativo">Ativo</option>
+														<option value="Inativo">Inativo</option>
+													</select>
 												</div>
 											</div>
 											<div class="col-sm-6">
-													<label>Codigo de Barra</label>
-													<input type="text" placeholder="Ex: 00003432402349234" ngModel name="codbarra"class="form-control">
+												<label>Codigo de Barra</label>
+												<input type="text" placeholder="Ex: 00003432402349234" ngModel name="codbarra" class="form-control">
 
 											</div>
-											
+
 										</div>
 									</div>
 									<!--Aqui termina form group-->
@@ -154,136 +182,136 @@
 						</div>
 					</div>
 				</div>
-	</div>
-		<!-- modal cadastro -->
-		<!-- modal de dados -->
-	<div id="modal_dados_vertical" class="modal fade">
-					<div class="modal-dialog">
-						<div class="modal-content">
-							<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal">&times;</button>
-								<h5 class="modal-title">Dados do Produto</h5>
-							</div>
-
-							<form action="#">
-								<div class="modal-body">
-									<div class="form-group">
-										<div class="row">
-											<div class="col-sm-6">
-												<label>Nome do Produto</label><br>
-												Marmitex PQ
-											</div>
-
-											<div class="col-sm-6">
-												<label>Unidade de Medida</label><br>
-												PC
-											</div>
-										</div>
-									</div>
-
-									<div class="form-group">
-										<div class="row">
-											<div class="col-sm-6">
-												<label>Quantidade Padrão</label><br>
-												1
-											</div>
-
-											<div class="col-sm-6">
-												<label>Valor</label><br>
-												R$9,00
-											</div>
-										</div>
-									</div>
-
-									<div class="form-group">
-										<div class="row">
-											<div class="col-sm-4">
-												<label>Status</label><br>
-												Ativo
-											</div>
-
-											
-										</div>
-									</div>
-
-									
-								</div>
-
-								<div class="modal-footer">
-									<button type="button" class="btn btn-link" data-dismiss="modal">Fechar</button>
-									
-								</div>
-							</form>
+			</div>
+			<!-- modal cadastro -->
+			<!-- modal de dados -->
+			<div id="modal_dados_vertical" class="modal fade">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h5 class="modal-title">Dados do Produto</h5>
 						</div>
-					</div>
-				</div>
-				<!-- modal de dados -->
-				
-				
-				
-				<!-- Basic modal -->
-				<div id="modal_default" class="modal fade">
-					<div class="modal-dialog">
-						<div class="modal-content">
-							<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal">&times;</button>
-								<h5 class="modal-title">Dados do Cliente</h5>
-							</div>
 
+						<form action="#">
 							<div class="modal-body">
-								<h6 class="text-semibold">Nome/Razão Social:</h6>
-								<p>Lorrany Batista de Amorim</p>
-								
-								<h6 class="text-semibold">CPF/CNPJ:</h6>
-								99999999900
-								
-								<h6 class="text-semibold">Telefone:</h6>
-								31 33981019
-								
-								<h6 class="text-semibold">Celular:</h6>
-								31 998515217
-								
-								<h6 class="text-semibold">E-mail:</h6>
-								lorranybatistaamorim@gmail.com
-								
-								<h6 class="text-semibold">CEP:</h6>
-								31073010
-								
-								<h6 class="text-semibold">Logradouro:</h6>
-								Rua Petropólis 
-								
-								<h6 class="text-semibold">Número:</h6>
-								539
-								
-								<h6 class="text-semibold">Bairro:</h6>
-								Industrial São Luiz
-								
-								<h6 class="text-semibold">Cidade:</h6>
-								Contagem
-								
-								<h6 class="text-semibold">UF:</h6>
-								MG
+								<div class="form-group">
+									<div class="row">
+										<div class="col-sm-6">
+											<label>Nome do Produto</label>
+											<br> Marmitex PQ
+										</div>
 
-								
+										<div class="col-sm-6">
+											<label>Unidade de Medida</label>
+											<br> PC
+										</div>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<div class="row">
+										<div class="col-sm-6">
+											<label>Quantidade Padrão</label>
+											<br> 1
+										</div>
+
+										<div class="col-sm-6">
+											<label>Valor</label>
+											<br> R$9,00
+										</div>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<div class="row">
+										<div class="col-sm-4">
+											<label>Status</label>
+											<br> Ativo
+										</div>
+
+
+									</div>
+								</div>
+
+
 							</div>
 
 							<div class="modal-footer">
-								<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
-								
+								<button type="button" class="btn btn-link" data-dismiss="modal">Fechar</button>
+
 							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<!-- modal de dados -->
+
+
+
+			<!-- Basic modal -->
+			<div id="modal_default" class="modal fade">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h5 class="modal-title">Dados do Cliente</h5>
+						</div>
+
+						<div class="modal-body">
+							<h6 class="text-semibold">Nome/Razão Social:</h6>
+							<p>Lorrany Batista de Amorim</p>
+
+							<h6 class="text-semibold">CPF/CNPJ:</h6>
+							99999999900
+
+							<h6 class="text-semibold">Telefone:</h6>
+							31 33981019
+
+							<h6 class="text-semibold">Celular:</h6>
+							31 998515217
+
+							<h6 class="text-semibold">E-mail:</h6>
+							lorranybatistaamorim@gmail.com
+
+							<h6 class="text-semibold">CEP:</h6>
+							31073010
+
+							<h6 class="text-semibold">Logradouro:</h6>
+							Rua Petropólis
+
+							<h6 class="text-semibold">Número:</h6>
+							539
+
+							<h6 class="text-semibold">Bairro:</h6>
+							Industrial São Luiz
+
+							<h6 class="text-semibold">Cidade:</h6>
+							Contagem
+
+							<h6 class="text-semibold">UF:</h6>
+							MG
+
+
+						</div>
+
+						<div class="modal-footer">
+							<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+
 						</div>
 					</div>
 				</div>
-				<!-- /basic modal -->
+			</div>
+			<!-- /basic modal -->
 
 
-			
 
-	</div>
-</div>
-			<!-- /main content -->
+
 		</div>
-		<!-- /page content -->
-  <!-- Footer -->
-	<app-footer></app-footer>
-	<!-- /footer -->
+	</div>
+	<!-- /main content -->
+</div>
+<!-- /page content -->
+<!-- Footer -->
+<app-footer></app-footer>
+<!-- /footer -->
