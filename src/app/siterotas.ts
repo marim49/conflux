@@ -23,9 +23,9 @@ const paginas: Routes = [
     {path:'recuperarsenhalogin',component:RecuperarsenhaloginComponent},
     {path: 'home', component:HomeComponent},
     {path: 'home/cadastro/cliente', component:CadastroClienteComponent},
-    {path: 'editar/cliente', component:EditarClienteComponent},
+    {path: 'home/editar/cliente', component:EditarClienteComponent},
     {path: 'home/cadastro/produto', component:CadastroProdutoComponent},
-    {path: 'editar/produto', component:EditarProdutoComponent},
+    {path: 'home/editar/produto', component:EditarProdutoComponent},
    
 
 ];

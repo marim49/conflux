@@ -5,5 +5,4 @@ export class produto{
     QuantidadePadrao: string;
     Valor: number;
     Status:string;   
-
 }
