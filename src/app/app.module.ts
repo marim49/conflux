@@ -12,6 +12,7 @@ import {AngularFireModule} from 'angularfire2';
 import {AngularFireDatabaseModule, AngularFireDatabase} from 'angularfire2/database';
 import{AuthService} from './services/auth.service';
 import { CadastrologinComponent } from './cadastrologin/cadastrologin.component';
+import { RecuperarsenhaloginComponent } from './recuperarsenhalogin/recuperarsenhalogin.component';
 import{routing} from './siterotas';
 import { HomeComponent } from './home/home.component';
 import { ClienteComponent } from './cliente/cliente.component';
@@ -40,6 +41,7 @@ import { EstornoComponent } from './estorno/estorno.component';
     ImportsComponent,
     UserloginComponent,
     CadastrologinComponent,
+    RecuperarsenhaloginComponent,
     HomeComponent,
     ClienteComponent,
     ProdutoComponent,
