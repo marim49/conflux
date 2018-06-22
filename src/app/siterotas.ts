@@ -6,8 +6,13 @@ import {RecuperarsenhaloginComponent}from './recuperarsenhalogin/recuperarsenhal
 import { LoadedRouterConfig } from '@angular/router/src/config';
 import { RouterConfigLoader } from '@angular/router/src/router_config_loader';
 import { ModuleWithProviders } from '@angular/compiler/src/core';
-import {SidebarComponent} from './sidebar/sidebar.component'
+import {HomeComponent} from './home/home.component';
 import { Component } from '@angular/core';
+import {AppComponent}from './app.component';
+import {CadastroClienteComponent} from './cliente/cadastro-cliente/cadastro-cliente.component'
+import {EditarClienteComponent} from './cliente/editar-cliente/editar-cliente.component'
+import {CadastroProdutoComponent} from './produto/cadastro-produto/cadastro-produto.component'
+import {EditarProdutoComponent} from './produto/editar-produto/editar-produto.component'
 
 /*Fazendo as rotas das paginas
 lembrar de fazer os imports das paginas criadas
@@ -16,7 +21,12 @@ const paginas: Routes = [
     {path:'',component:UserloginComponent},
     {path:'cadastrologin',component:CadastrologinComponent},
     {path:'recuperarsenhalogin',component:RecuperarsenhaloginComponent},
-    {path:'sidebar',component:SidebarComponent}
+    {path: 'home', component:HomeComponent},
+    {path: 'home/cadastro/cliente', component:CadastroClienteComponent},
+    {path: 'home/editar/cliente', component:EditarClienteComponent},
+    {path: 'home/cadastro/produto', component:CadastroProdutoComponent},
+    {path: 'home/editar/produto', component:EditarProdutoComponent},
+   
 
 ];
 export const routing :ModuleWithProviders=RouterModule.forRoot(paginas);

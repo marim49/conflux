@@ -1,0 +1,77 @@
+<div class="sidebar-content">
+<!-- Main navigation -->
+<div class="sidebar-category sidebar-category-visible">
+<div class="sidebar-user-material">
+							<div class="category-content">
+								<div class="sidebar-user-material-content">
+									<a href="#"><img src="{{foto}}" class="img-circle img-responsive" alt=""></a>
+									<h6>{{nomeuser}}</h6>
+									<span class="text-size-small">{{email}}</span>
+								</div>
+															
+								<div class="sidebar-user-material-menu">
+									<a href="#user-nav" data-toggle="collapse"><span>Minha conta</span> <i class="caret"></i></a>
+								</div>
+							</div>
+							
+							<div class="navigation-wrapper collapse" id="user-nav">
+								<ul class="navigation">
+									<li><a href="#"><i class="icon-user-plus"></i> <span>Meu Perfil</span></a></li>
+									<li><a href="#"><i class="icon-coins"></i> <span>Minhas finanças</span></a></li>
+									<li class="divider"></li>
+									<li><a href="#"><i class="icon-cog5"></i> <span>Configurações da conta</span></a></li>
+									<li><a (click)="logout()"><i class="icon-switch2"></i> <span>Sair</span></a></li>
+								</ul>
+							</div>
+						</div>
+<div class="category-content no-padding">
+							<ul class="navigation navigation-main navigation-accordion">
+
+								<!-- Main -->
+								<li class="navigation-header"><span>Main</span> <i class="icon-menu" title="Main pages"></i></li>
+								<li class="active"><a href="index.html"><i class="icon-home4"></i> <span>Início</span></a></li>
+								<li><a href="#"><i class=" icon-cash3"></i> <span>Fluxo de caixa</span></a></li>
+								<li>
+									<a href="#"><i class="icon-user-plus"></i> <span>Cliente</span></a>
+									<ul>
+										<li><a href="#">Cadastrar cliente</a></li>
+										<li><a href="#">Consultar cliente</a></li>
+										<li><a href="#">Eliminar / Editar cadastro</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#"><i class="icon-wrench"></i> <span>Serviço</span></a>
+									<ul>
+										<li><a href="#" id="layout1">Cadastrar serviço</a></li>
+										<li><a href="#" id="layout2">Consultar serviço</a></li>
+										<li><a href="#" id="layout3">Eliminar / Editar serviço</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#"><i class="icon-price-tag"></i> <span>Produto</span></a>
+									<ul>
+										<li><a routerLink="cadastro/produto">Cadastrar produto</a></li>
+										<li><a href="#">Consultar produto</a></li>
+										<li><a href="#">Eliminar / Cadastrar produto</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#"><i class="icon-coins"></i> <span>Recebimento</span></a>
+									<ul>
+										<li><a href="#">Cadastrar recebimento</a></li>
+										<li><a href="#">Consultar recebimento</a></li>
+									</ul>
+								</li>
+								<li><a href="#"><i class="icon-pencil7"></i> <span>Despesas</span></a>
+									<ul>
+										<li><a href="#">Consultar Despesas</a></li>
+									</ul>
+								</li>
+								<li><a href="#"><i class="icon-stats-growth"></i> <span>Análise de dados</span></a></li>
+								
+								<!-- /main -->
+							</ul>
+						</div>
+						</div>
+<!-- /main navigation -->
+</div>
