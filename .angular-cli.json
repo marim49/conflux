@@ -20,7 +20,7 @@
       "prefix": "app",
       "styles": [
         "styles.css",
-        "../node_modules/ngx-toastr/toastr.css",
+        "../node_modules/ngx-toastr/toastr.css"
 
       ],
       "scripts": [
