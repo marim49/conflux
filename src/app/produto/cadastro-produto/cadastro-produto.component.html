@@ -34,6 +34,7 @@
             </thead>
             <tbody>
               <tr *ngFor="let p of produtos | async ">
+
                 <td>{{p.CodProduto}}</td>
                 <td>{{p.NomeProdutoServico}}</td>
                 <td>{{p.Tipo}}</td>
@@ -45,12 +46,12 @@
 
                       <ul class="icons-list">
                         <li class="text-primary-600">
-                          <a>
+                          <a (click)="recebeselect(p.key)">
                             <i class="icon-pencil7" data-toggle="modal" data-target="#modal_form_vertical_editar"></i>
                           </a>
                         </li>
                         <li class="text-danger-600">
-                          <a>
+                          <a (click)="recebeselect(p.key)">
                             <i class="icon-trash" data-toggle="modal" data-target="#modal_theme_danger"></i>
                           </a>
                         </li>
@@ -85,7 +86,7 @@
 
               <div class="modal-footer">
                 <button type="button" class="btn btn-link" data-dismiss="modal">Não</button>
-                <button type="button" class="btn btn-danger">SIM!</button>
+                <button type="button" (click)="deletarproduto()" class="btn btn-danger">SIM!</button>
 
               </div>
             </div>
@@ -100,40 +101,94 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h5 class="modal-title">Editar Cadastro</h5>
               </div>
-
-              <form action="#">
+              <form #editarproduto="ngForm" (ngSubmit)="updateproduto(editarproduto)">
                 <div class="modal-body">
                   <div class="form-group">
                     <div class="row">
-                      <div class="col-sm-6">
-                        <label>Descrição</label>
-                        <input type="text" placeholder="Ex.: Conta de Água" class="form-control">
-                      </div>
 
+                      <div class="col-sm-4">
+                        <label>Codigo do Produto</label>
+                        <input type="text" name="codproduto" ngModel class="form-control input-sm" required placeholder="Ex: 01">
+                      </div>
+                      <div class="col-sm-2">
+
+                        <label>Tipo:</label>
+                        <select [(ngModel)]="opserpro" name="opserpro " required class="form-control input-lg">
+                          <option value="Produto">Produto</option>
+                          <option value="Servico">Seviço</option>
+                        </select>
+                      </div>
                       <div class="col-sm-6">
-                        <label>Tipo</label>
-                        <input type="text" placeholder="Ex.: Conta" class="form-control">
+
+                        <label>Nome do Produto/Nome Serviço</label>
+                        <input type="text" placeholder="Ex.: HD Externo 500gb/Instalação de Software" ngModel name="nomeproduto" required class="form-control input-lg">
                       </div>
                     </div>
                   </div>
+                  <!--Aqui acaba primeiro form group-->
 
+
+
+                  <!--Aqui começa form group-->
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-sm-4">
+                        <label>Preço Venda:</label>
+                        <input type="text" placeholder="Ex.: R$0,00" ngModel name="precovenda" class="form-control">
+                      </div>
+
+                      <div class="col-sm-4">
+                        <label>Preço Custo:</label>
+                        <input type="text" placeholder="Ex.: R$0,00" ngModel name="precocusto" class="form-control">
+                      </div>
+                    </div>
+                  </div>
+                  <!--aqui termina form group-->
+                  <!--Aqui começa form group-->
                   <div class="form-group">
                     <div class="row">
                       <div class="col-sm-6">
-                        <label>Valor</label>
-                        <input type="text" placeholder="Ex.: R$250,00" class="form-control">
+                        <label> Grupo:</label>
+                        <input type="text" placeholder="Ex: informática " ngModel name="grupo" class="form-control">
+                      </div>
+                      <div class="col-sm-4">
+                        <label>Estoque:</label>
+                        <input type="text" placeholder="Ex: 20" ngModel name="estoque" class="form-control">
                       </div>
                     </div>
                   </div>
+                  <!--Aqui termina form group-->
+
+                  <!--Aqui começa form group-->
+                  <div class="form-group">
+                    <div class="row">
+
+                      <div class="col-sm-4">
+                        <label>Status</label>
+                        <div class="form-group">
+                          <select [(ngModel)]="opstatus" name="status " class="form-control input-lg">
+                            <option value="Ativo">Ativo</option>
+                            <option value="Inativo">Inativo</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <label>Codigo de Barra</label>
+                        <input type="text" placeholder="Ex: 00003432402349234" ngModel name="codbarra" class="form-control">
+
+                      </div>
+
+                    </div>
+                  </div>
+                  <!--Aqui termina form group-->
                 </div>
-
-
 
                 <div class="modal-footer">
                   <button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
                   <button type="submit" class="btn btn-primary">Cadastrar</button>
                 </div>
               </form>
+
             </div>
           </div>
         </div>
