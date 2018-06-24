@@ -15,7 +15,7 @@ import {EditarProdutoComponent} from './produto/editar-produto/editar-produto.co
 
 /*Fazendo as rotas das paginas
 lembrar de fazer os imports das paginas criadas
- */
+ */ 
 const paginas: Routes = [
     {path:'',component:UserloginComponent},
     {path:'cadastrologin',component:CadastrologinComponent},
