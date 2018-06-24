@@ -12,6 +12,9 @@ import {CadastroClienteComponent} from './cliente/cadastro-cliente/cadastro-clie
 import {EditarClienteComponent} from './cliente/editar-cliente/editar-cliente.component'
 import {CadastroProdutoComponent} from './produto/cadastro-produto/cadastro-produto.component'
 import {EditarProdutoComponent} from './produto/editar-produto/editar-produto.component'
+import {FluxoComponent} from './fluxo/fluxo.component'
+import { ResumoDiaComponent } from './fluxo/resumo-dia/resumo-dia.component';
+import {EstornoComponent} from './fluxo/estorno/estorno.component';
 
 /*Fazendo as rotas das paginas
 lembrar de fazer os imports das paginas criadas
@@ -24,6 +27,11 @@ const paginas: Routes = [
     {path: 'home/editar/cliente', component:EditarClienteComponent},
     {path: 'home/cadastro/produto', component:CadastroProdutoComponent},
     {path: 'home/editar/produto', component:EditarProdutoComponent},
+    {path: 'fluxo', component:FluxoComponent},
+    {path: 'fluxo/resumodia', component:ResumoDiaComponent},
+    {path: 'fluxo/estorno', component:EstornoComponent},
+    
+
    
 
 ];
