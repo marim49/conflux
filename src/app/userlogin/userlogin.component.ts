@@ -25,8 +25,8 @@ export class UserloginComponent  {
     this.authorizationService.LoginFacebook()
     .then((data)=>{
      
-     /* this.toastr.success("Login Realizado com Sucesso !");
-      window.location.replace('http://localhost:4200/home');*/
+     this.toastr.success("Login Realizado com Sucesso !");
+      /*window.location.replace('http://localhost:4200/home');*/
       this.router.navigateByUrl('/home');
     })
     .catch((error)=>{
@@ -40,8 +40,8 @@ export class UserloginComponent  {
     .then((data)=>{
       console.log();
       this.toastr.success("Login Realizado com Sucesso !");
-      window.location.replace('http://localhost:4200/home');
-     /* this.router.navigateByUrl('/home');*/
+     /* window.location.replace('http://localhost:4200/home');*/
+     this.router.navigateByUrl('/home');
       
     })
     .catch((error)=>{
@@ -59,8 +59,8 @@ Loginemail(loginform:NgForm){
   .then((data)=>{
     console.log();
     this.toastr.success("Login Realizado com Sucesso !");
-    window.location.replace('http://localhost:4200/home');
-    /*this.router.navigateByUrl('/home');*/
+    /*window.location.replace('http://localhost:4200/home');*/
+    this.router.navigateByUrl('/home');
     
   })
   .catch((error)=>{
