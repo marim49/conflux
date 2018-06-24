@@ -12,7 +12,6 @@ import {AngularFireModule} from 'angularfire2';
 import {AngularFireDatabaseModule, AngularFireDatabase} from 'angularfire2/database';
 import{AuthService} from './services/auth.service';
 import { CadastrologinComponent } from './cadastrologin/cadastrologin.component';
-import { RecuperarsenhaloginComponent } from './recuperarsenhalogin/recuperarsenhalogin.component';
 import{routing} from './siterotas';
 import { HomeComponent } from './home/home.component';
 import { ClienteComponent } from './cliente/cliente.component';
@@ -27,6 +26,11 @@ import { EditarProdutoComponent } from './produto/editar-produto/editar-produto.
 import { CadastroProdutoComponent } from './produto/cadastro-produto/cadastro-produto.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {ToastrModule} from "ngx-toastr";
+import { ResumoDiaComponent } from './fluxo/resumo-dia/resumo-dia.component';
+import { FluxoComponent } from './fluxo/fluxo.component';
+import { EstornoComponent } from './fluxo/estorno/estorno.component';
+import { SiderbarFluxoComponent } from './layout/siderbar-fluxo/siderbar-fluxo.component';
+import { ConteudoFluxoComponent } from './fluxo/conteudo-fluxo/conteudo-fluxo.component';
 
 
 
@@ -38,7 +42,6 @@ import {ToastrModule} from "ngx-toastr";
     ImportsComponent,
     UserloginComponent,
     CadastrologinComponent,
-    RecuperarsenhaloginComponent,
     HomeComponent,
     ClienteComponent,
     ProdutoComponent,
@@ -50,6 +53,11 @@ import {ToastrModule} from "ngx-toastr";
     EditarClienteComponent,
     EditarProdutoComponent,
     CadastroProdutoComponent,
+    ResumoDiaComponent,
+    FluxoComponent,
+    EstornoComponent,
+    SiderbarFluxoComponent,
+    ConteudoFluxoComponent,
   ],
   imports: [
     BrowserModule,
