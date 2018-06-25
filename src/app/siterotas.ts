@@ -12,18 +12,30 @@ import {CadastroClienteComponent} from './cliente/cadastro-cliente/cadastro-clie
 import {EditarClienteComponent} from './cliente/editar-cliente/editar-cliente.component'
 import {CadastroProdutoComponent} from './produto/cadastro-produto/cadastro-produto.component'
 import {EditarProdutoComponent} from './produto/editar-produto/editar-produto.component'
+import {FluxoComponent} from './fluxo/fluxo.component'
+import { ResumoDiaComponent } from './fluxo/resumo-dia/resumo-dia.component';
+import {EstornoComponent} from './fluxo/estorno/estorno.component';
+import {RecebimentoComponent} from './recebimento/recebimento.component';
+import {DespesaComponent} from './despesa/despesa.component';
 
 /*Fazendo as rotas das paginas
 lembrar de fazer os imports das paginas criadas
- */
+ */ 
 const paginas: Routes = [
     {path:'',component:UserloginComponent},
     {path:'cadastrologin',component:CadastrologinComponent},
     {path: 'home', component:HomeComponent},
-    {path: 'home/cadastro/cliente', component:CadastroClienteComponent},
-    {path: 'home/editar/cliente', component:EditarClienteComponent},
-    {path: 'home/cadastro/produto', component:CadastroProdutoComponent},
-    {path: 'home/editar/produto', component:EditarProdutoComponent},
+    {path: 'home/cliente', component:CadastroClienteComponent},
+    {path: 'home/produto', component:CadastroProdutoComponent},
+    {path: 'home/recebimento', component:RecebimentoComponent},
+    {path: 'home/despesa', component:DespesaComponent},
+    {path: 'home/fluxo', component:FluxoComponent},
+    {path: 'home/fluxo/resumodia', component:ResumoDiaComponent},
+    {path: 'home/fluxo/estorno', component:EstornoComponent},
+    
+
+    
+
    
 
 ];

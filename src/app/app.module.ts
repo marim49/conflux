@@ -26,9 +26,12 @@ import { EditarProdutoComponent } from './produto/editar-produto/editar-produto.
 import { CadastroProdutoComponent } from './produto/cadastro-produto/cadastro-produto.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {ToastrModule} from "ngx-toastr";
-import { ResumoDiaComponent } from './resumo-dia/resumo-dia.component';
+import { ResumoDiaComponent } from './fluxo/resumo-dia/resumo-dia.component';
 import { FluxoComponent } from './fluxo/fluxo.component';
-import { EstornoComponent } from './estorno/estorno.component';
+import { EstornoComponent } from './fluxo/estorno/estorno.component';
+import { SiderbarFluxoComponent } from './layout/siderbar-fluxo/siderbar-fluxo.component';
+import { ConteudoFluxoComponent } from './fluxo/conteudo-fluxo/conteudo-fluxo.component';
+import { DespesaComponent } from './despesa/despesa.component';
 
 
 
@@ -54,6 +57,9 @@ import { EstornoComponent } from './estorno/estorno.component';
     ResumoDiaComponent,
     FluxoComponent,
     EstornoComponent,
+    SiderbarFluxoComponent,
+    ConteudoFluxoComponent,
+    DespesaComponent,
   ],
   imports: [
     BrowserModule,

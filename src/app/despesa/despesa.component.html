@@ -15,9 +15,9 @@
       <!-- Page length options -->
       <div class="panel panel-flat">
         <div class="panel-heading">
-          <h5 class="panel-title">Recebimento</h5>
+          <h5 class="panel-title">Despesa</h5>
           <div class="heading-elements">
-            <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#modal_form_vertical">Cadastrar Recebimento
+            <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#modal_form_vertical">Cadastrar Despesa
               <i class=" icon-diff-added position-right"></i>
             </button>
 
@@ -33,8 +33,8 @@
           <thead>
             <tr>
               <th>Código</th>
-              <th>Descrição Recebimento</th>
-              <th>De</th>
+              <th>Descrição Despesa</th>
+              <th>Para</th>
               <th>Tipo</th>
               <th>Valor</th>
               <th>Editar/Eliminar</th>
@@ -45,11 +45,10 @@
           <tbody>
             <tr>
               <td>0001</td>
-              <td>Emprestimo
-              </td>
-              <td>Michele</td>
-              <td>Depósito em conta</td>
-              <td>1.000,00</td>
+              <td>Conta de Água</td>
+              <td>Copasa</td>
+              <td>Contas</td>
+              <td>235,00</td>
               <td class="text-center">
                 <ul class="icons-list">
                   <li class="dropdown">
@@ -88,16 +87,16 @@
             </div>
 
             <div class="modal-body">
-
-              <h6 class="text-semibold">Tem certeza que deseja excluir este cadastro?</h6>
-
+              
+                <h6 class="text-semibold">Tem certeza que deseja excluir este cadastro?</h6>
+              
             </div>
 
             <div class="modal-footer">
-
-              <button type="button" class="btn btn-link" data-dismiss="modal">Não</button>
-              <button type="button" class="btn btn-danger">SIM!</button>
-
+              
+                <button type="button" class="btn btn-link" data-dismiss="modal">Não</button>
+                <button type="button" class="btn btn-danger">SIM!</button>
+              
             </div>
           </div>
         </div>
@@ -111,7 +110,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h5 class="modal-title">Cadastrar Recebimento</h5>
+              <h5 class="modal-title">Cadastrar Despesa</h5>
             </div>
 
             <form action="#">
@@ -120,12 +119,12 @@
                   <div class="row">
                     <div class="col-sm-6">
                       <label>Descrição</label>
-                      <input type="text" placeholder="Ex.: Emprestimo" class="form-control">
+                      <input type="text" placeholder="Ex.: Conta de Água" class="form-control">
                     </div>
 
                     <div class="col-sm-6">
-                      <label>De</label>
-                      <input type="text" placeholder="Ex.: Maria" class="form-control">
+                      <label>Para</label>
+                      <input type="text" placeholder="Ex.: Copasa" class="form-control">
                     </div>
                   </div>
                 </div>
@@ -134,7 +133,7 @@
                   <div class="row">
                     <div class="col-sm-6">
                       <label>Tipo</label>
-                      <input type="text" placeholder="Ex.: Depósito em conta" class="form-control">
+                      <input type="text" placeholder="Ex.: Contas" class="form-control">
                     </div>
 
                     <div class="col-sm-6">
@@ -206,6 +205,8 @@
       </div>
 
       <!-- Modal de edição/ -->
+
+
 
 
 

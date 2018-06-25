@@ -1,0 +1,129 @@
+<app-navbar>
+</app-navbar>
+<!-- Page container -->
+<div class="page-container">
+  <!-- Page content -->
+  <div class="page-content">
+    <!-- Main sidebar -->
+    <div class="sidebar sidebar-main sidebar-default">
+      <app-siderbar-fluxo></app-siderbar-fluxo>
+    </div>
+    <!-- /main sidebar -->
+    <div class="content-wrapper">
+
+      <!-- Page length options -->
+      <div class="panel panel-flat">
+        <div class="panel-heading">
+          <h5 class="panel-title">Resumo do Dia</h5>
+
+        </div>
+
+        <div class="panel-body">
+
+        </div>
+
+        <table class="table datatable-show-all">
+          <thead>
+            <tr>
+              <th>Código</th>
+              <th>Tipo</th>
+              <th>Usuário</th>
+              <th>Cliente</th>
+              <th>Descrição</th>
+              <th>Valor</th>
+              <th></th>
+
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>001</td>
+              <td>Recebimento</td>
+              <td>Juscleide</td>
+              <td>
+                <a href="" data-toggle="modal" data-target="#modal_dados_vertical">Maria José</a>
+              </td>
+              <td>
+                <a href="" data-toggle="modal" data-target="#modal_dados_vertical">Produto 1</a>
+              </td>
+              <td>7,90</td>
+              <td>
+                <p>
+                  <button type="button" class="btn btn-danger btn-rounded btn-xs" data-toggle="modal" data-target="#modal_form_vertical_estorno">
+                    <i class="icon-reply"></i>Estorno</button>
+                </p>
+              </td>
+            </tr>
+
+
+          </tbody>
+        </table>
+      </div>
+      <!-- /page length options -->
+
+      <!-- modal home -->
+      <div id="modal_theme_danger" class="modal fade">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header bg-danger">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h6 class="modal-title">Aviso</h6>
+            </div>
+
+            <div class="modal-body">
+              <h6 class="text-semibold">Tem certeza que deseja sair?</h6>
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-link" data-dismiss="modal">Não</button>
+              <a href="home.html" type="button" class="btn btn-danger">Sim</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /modal home -->
+
+
+      <!-- modal estorno-->
+
+      <!-- modal de estorno -->
+      <div id="modal_form_vertical_estorno" class="modal fade">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h5 class="modal-title">Estorno</h5>
+            </div>
+
+            <form action="#">
+              <div class="modal-body">
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <label>Motivo do estorno:</label>
+                      <input type="text" placeholder="Forma de pagamento incorreta" class="form-control">
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-link" data-dismiss="modal">Fechar</button>
+                  <button type="submit" class="btn btn-primary">Confirmar</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- /modal de estorno -->
+
+    </div>
+    <!-- /main content -->
+  </div>
+  <!-- /page content -->
+</div>
+<!-- /Page container -->
+<!-- Footer -->
+<app-footer></app-footer>
+<!-- /footer -->
