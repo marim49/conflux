@@ -31,6 +31,7 @@ import { FluxoComponent } from './fluxo/fluxo.component';
 import { EstornoComponent } from './fluxo/estorno/estorno.component';
 import { SiderbarFluxoComponent } from './layout/siderbar-fluxo/siderbar-fluxo.component';
 import { ConteudoFluxoComponent } from './fluxo/conteudo-fluxo/conteudo-fluxo.component';
+import { DespesaComponent } from './despesa/despesa.component';
 
 
 
@@ -58,6 +59,7 @@ import { ConteudoFluxoComponent } from './fluxo/conteudo-fluxo/conteudo-fluxo.co
     EstornoComponent,
     SiderbarFluxoComponent,
     ConteudoFluxoComponent,
+    DespesaComponent,
   ],
   imports: [
     BrowserModule,
