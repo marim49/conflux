@@ -27,7 +27,7 @@ export class UserloginComponent  {
      
      this.toastr.success("Login Realizado com Sucesso !");
       /*window.location.replace('http://localhost:4200/home');*/
-      this.router.navigateByUrl('/home');
+      this.router.navigateByUrl('home');
     })
     .catch((error)=>{
       console.log(error);
@@ -41,7 +41,7 @@ export class UserloginComponent  {
       console.log();
       this.toastr.success("Login Realizado com Sucesso !");
      /* window.location.replace('http://localhost:4200/home');*/
-     this.router.navigateByUrl('/home');
+     this.router.navigateByUrl('home');
       
     })
     .catch((error)=>{
@@ -60,7 +60,7 @@ Loginemail(loginform:NgForm){
     console.log();
     this.toastr.success("Login Realizado com Sucesso !");
     /*window.location.replace('http://localhost:4200/home');*/
-    this.router.navigateByUrl('/home');
+    this.router.navigateByUrl('home');
     
   })
   .catch((error)=>{
