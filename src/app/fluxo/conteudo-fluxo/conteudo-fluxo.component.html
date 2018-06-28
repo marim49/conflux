@@ -1,473 +1,476 @@
-
-
 <!-- /main sidebar -->
-<form class="form-horizontal" action="#">
-  <div class="panel panel-flat">
-    <div class="panel-heading">
+<div class="panel panel-flat">
+  <div class="panel-heading">
 
-      <h5 class="panel-title">
-        <b>Movimento de Caixa</b>
-      </h5>
-      <br>
-      <h1 class="panel-title">R$493,30</h1>
+    <h5 class="panel-title">
+      <b>Movimento de Caixa</b>
+    </h5>
+    <br>
+    <h1 class="panel-title">R$493,30</h1>
 
 
-      <div class="heading-elements">
+    <div class="heading-elements">
 
-        <button type="button" class="btn btn-success btn-rounded  btn-sm legitRipple"> Entrada
-          <i class="  icon-plus3 position-right"></i>
-        </button>
-        <button type="button" class="btn btn-warning btn-rounded  btn-sm legitRipple"> Saída
-          <i class=" icon-minus3 position-right"></i>
-        </button>
+      <button type="button" class="btn btn-success btn-rounded  btn-sm legitRipple"> Entrada
+        <i class="  icon-plus3 position-right"></i>
+      </button>
+      <button type="button" class="btn btn-warning btn-rounded  btn-sm legitRipple"> Saída
+        <i class=" icon-minus3 position-right"></i>
+      </button>
 
-      </div>
     </div>
-    <div class="panel-body">
-
+  </div>
+  <div class="form-control">
+    <label class="control-label">Usuário: Leandro</label>
+  </div>
+  <div class="panel-body">
+    <div class="content">
       <div class="row">
         <div class="col-md-6">
-          <fieldset>
+          <div class="panel panel-flat">
+            <div class="panel-body">
+              <div class="col-md-6">
+                <fieldset>
 
-            <div class="form-group">
-              <label class="col-lg-3 control-label">Usuário: Leandro</label>
 
+
+                  <div class="form-group">
+                    <div>
+                      <label>Código Cliente: </label>
+                      <input type="text" name="codcliente" class="form-control">
+                    </div>
+                    <div>
+                      <br>
+                      <label>Código Produto:</label>
+                      <input type="text" name="codproduto" class="form-control" (keyup)="recebecodigo($event)" placeholder="Ex:03" pattern="[0-9]">
+                    </div>
+                    <div>
+                      <br>
+                      <label>Valor Desconto:</label>
+                      <input type="text" name="valordesconto" class="form-control" placeholder="Ex:10%" pattern="[0-9]{3}">
+                    </div>
+                  </div>
+
+                </fieldset>
+              </div>
+              <div class="col-md-6">
+                <fieldset>
+                  <div class="form-group">
+
+                    <div>
+
+                      <span class="glyphicon glyphicon-search"></span>
+                      <label>Procurar Cliente:</label>
+                      <select class="form-control">
+                        <option></option>
+                        <optgroup label="Clientes">
+                          <option value="AK">Mario</option>
+                          <option value="HI">Alejo</option>
+                        </optgroup>
+                      </select>
+                    </div>
+                    <br>
+                    <div>
+                      <span class="glyphicon glyphicon-search"></span>
+                      <label>Procurar Produto:</label>
+                      <select class="form-control">
+                        <option></option>
+                        <optgroup label="Produtos ou Serviço" *ngFor="let p of produtos|async">
+                          <option value="{{p.NomeProdutoServico}}">{{p.NomeProdutoServico}}</option>
+                        </optgroup>
+                      </select>
+                    </div>
+
+                  </div>
+                </fieldset>
+              </div>
             </div>
-
-            <div class="form-group">
-              <label class="col-lg-3 control-label">Cliente: Juscleide</label>
-
-            </div>
-
-
-            <div class="form-group">
-              <label class="col-lg-3 control-label">Descrição:</label>
-
-              <select data-placeholder="Selecione o bagui" class="select-search">
-                <option></option>
-                <optgroup label="Alaskan/Hawaiian Time Zone">
-                  <option value="AK">Alaska</option>
-                  <option value="HI">Hawaii</option>
-                </optgroup>
-                <optgroup label="Pacific Time Zone">
-                  <option value="CA">California</option>
-                  <option value="NV">Nevada</option>
-                  <option value="WA">Washington</option>
-                </optgroup>
-                <optgroup label="Mountain Time Zone">
-                  <option value="AZ">Arizona</option>
-                  <option value="CO">Colorado</option>
-                  <option value="WY">Wyoming</option>
-                </optgroup>
-                <optgroup label="Central Time Zone">
-                  <option value="AL">Alabama</option>
-                  <option value="AR">Arkansas</option>
-                  <option value="KY">Kentucky</option>
-                </optgroup>
-                <optgroup label="Eastern Time Zone">
-                  <option value="CT">Connecticut</option>
-                  <option value="DE">Delaware</option>
-                  <option value="WV">West Virginia</option>
-                </optgroup>
-              </select>
-
-            </div>
-
-
-
-            <div class="form-group">
-              <label class="col-lg-3 control-label">Valor:</label>
-
-            </div>
-          </fieldset>
+          </div>
         </div>
-
         <div class="col-md-6">
-          <fieldset>
+          <div class="content">
+            <!-- Floating labels -->
 
+            <div class="panel panel-flat">
 
+              <table class="table datatable-basic">
+                <thead>
+                  <tr>
+                    <th>Cód Produto</th>
+                    <th>Produto/Serviço</th>
+                    <th>Quantidade</th>
+                    <th>Valor</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>
+                      <a href="" data-toggle="modal" data-target="#modal_dados_vertical">Produto 1</a>
+                    </td>
+                    <td>9</td>
+                    <td>7,90</td>    
+                    
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>
+                      <a href="" data-toggle="modal" data-target="#modal_dados_vertical">Produto 2</a>
+                    </td>
+                    <td>1</td>
+                    <td>170,90</td>
+   
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>
+                      <a href="" data-toggle="modal" data-target="#modal_dados_vertical">Produto 3</a>
+                    </td>
+                    <td>7</td>
+                    <td>35,90</td>
 
+                    
 
-            <table class="table datatable-show-all">
-              <thead>
-                <tr>
-                  <th>ID</th>
-                  <th>Produto/Serviço</th>
-                  <th>Quantidade</th>
-                  <th>Valor</th>
-                  <th>Total</th>
+                    
+                  </tr>
+                </tbody>
+              </table>
+            </div>
 
-
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>
-                    <a href="" data-toggle="modal" data-target="#modal_dados_vertical">Produto 1</a>
-                  </td>
-                  <td>9</td>
-                  <td>7,90</td>
-                  <td>71,1</td>
-
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>
-                    <a href="" data-toggle="modal" data-target="#modal_dados_vertical">Produto 2</a>
-                  </td>
-                  <td>1</td>
-                  <td>170,90</td>
-                  <td>170,90</td>
-
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>
-                    <a href="" data-toggle="modal" data-target="#modal_dados_vertical">Produto 3</a>
-                  </td>
-                  <td>7</td>
-                  <td>35,90</td>
-                  <td>251,3</td>
-
-                </tr>
-
-              </tbody>
-            </table>
-
-
-
-
-
-          </fieldset>
+          </div>
         </div>
       </div>
+    </div>
 
-      <div class="text-right">
-        <button type="submit" class="btn btn-danger">Cancelar
-          <i class="icon-cancel-circle2 position-right"></i>
-        </button>
-        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal_theme_warning">Finalizar
-          <i class="icon-checkmark position-right"></i>
-        </button>
-        <button type="button" class="btn btn-success">Confirmar
-          <i class="icon-arrow-right14 position-right"></i>
-        </button>
+
+
+
+
+    <div class="text-right">
+      <button type="submit" class="btn btn-danger">Cancelar
+        <i class="icon-cancel-circle2 position-right"></i>
+      </button>
+      <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal_theme_warning">Finalizar
+        <i class="icon-checkmark position-right"></i>
+      </button>
+      <button type="button" class="btn btn-success">Confirmar
+        <i class="icon-arrow-right14 position-right"></i>
+      </button>
+    </div>
+  </div>
+
+
+
+
+  <!-- modal recebimentos -->
+  <div id="modal_form_vertical" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h5 class="modal-title">Cadastrar Recebimento</h5>
+        </div>
+
+        <form action="#">
+          <div class="modal-body">
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-6">
+                  <label>Produto/Serviço</label>
+                  <div class="form-group">
+                    <select name="select" class="form-control select-search input-lg">
+                      <option value="opt1">Selecione</option>
+                      <option value="opt2">Produto 1</option>
+                      <option value="opt3">Produto 2</option>
+                      <option value="opt4">Produto 3</option>
+                      <option value="opt5">Produto 4</option>
+                      <option value="opt6">Produto 5</option>
+                      <option value="opt7">Produto 6</option>
+                      <option value="opt8">Produto 7</option>
+                      <option value="opt9">Serviço 1</option>
+                      <option value="opt10">Serviço 2</option>
+                      <option value="opt11">Serviço 3</option>
+                      <option value="opt12">Serviço 4</option>
+                      <option value="opt13">Serviço 5</option>
+                      <option value="opt14">Serviço 6</option>
+                      <option value="opt15">Serviço 7</option>
+
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-6">
+                  <label>Quantidade</label>
+                  <input type="text" placeholder="Ex.: 3" class="form-control">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-6">
+                  <label>Valor</label>
+                  <input type="text" placeholder="Ex.: 89,90" class="form-control">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-4">
+                  <label>Cliente</label>
+                  <select name="select" class="form-control select-search input-lg">
+                    <option value="opt1">Selecione</option>
+                    <option value="opt2">Cliente 1</option>
+                    <option value="opt3">Cliente 2</option>
+                    <option value="opt4">Cliente 3</option>
+                    <option value="opt5">Cliente 4</option>
+                    <option value="opt6">Cliente 5</option>
+                    <option value="opt7">Cliente 6</option>
+                    <option value="opt8">Cliente 7</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-4">
+                  <label>Forma de Pagamento</label>
+                  <select name="select" class="form-control select-search input-lg">
+                    <option value="opt1">Selecione</option>
+                    <option value="opt2">Dinheiro</option>
+                    <option value="opt3">Cartão de Débito</option>
+                    <option value="opt4">Cartão de Crédito</option>
+                    <option value="opt5">Paypal</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
-</form>
+  <!-- modal cadastro -->
 
+  <!-- modal de dados -->
+  <div id="modal_dados_vertical" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h5 class="modal-title">Dados do Produto/Serviço</h5>
+        </div>
 
-<!-- modal recebimentos -->
-<div id="modal_form_vertical" class="modal fade">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h5 class="modal-title">Cadastrar Recebimento</h5>
-      </div>
+        <form action="#">
+          <div class="modal-body">
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-6">
+                  <label>Produto/Serviço</label>
+                  <br> Produto 1
+                </div>
+              </div>
+            </div>
 
-      <form action="#">
-        <div class="modal-body">
-          <div class="form-group">
-            <div class="row">
-              <div class="col-sm-6">
-                <label>Produto/Serviço</label>
-                <div class="form-group">
-                  <select name="select" class="form-control select-search input-lg">
-                    <option value="opt1">Selecione</option>
-                    <option value="opt2">Produto 1</option>
-                    <option value="opt3">Produto 2</option>
-                    <option value="opt4">Produto 3</option>
-                    <option value="opt5">Produto 4</option>
-                    <option value="opt6">Produto 5</option>
-                    <option value="opt7">Produto 6</option>
-                    <option value="opt8">Produto 7</option>
-                    <option value="opt9">Serviço 1</option>
-                    <option value="opt10">Serviço 2</option>
-                    <option value="opt11">Serviço 3</option>
-                    <option value="opt12">Serviço 4</option>
-                    <option value="opt13">Serviço 5</option>
-                    <option value="opt14">Serviço 6</option>
-                    <option value="opt15">Serviço 7</option>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-6">
+                  <label>Valor</label>
+                  <br> 7,90
+                </div>
+              </div>
+            </div>
 
-                  </select>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-4">
+                  <label>Quantidade em estoque</label>
+                  <br> 1081
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="form-group">
-            <div class="row">
-              <div class="col-sm-6">
-                <label>Quantidade</label>
-                <input type="text" placeholder="Ex.: 3" class="form-control">
-              </div>
-            </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-link" data-dismiss="modal">Fechar</button>
+
           </div>
-
-          <div class="form-group">
-            <div class="row">
-              <div class="col-sm-6">
-                <label>Valor</label>
-                <input type="text" placeholder="Ex.: 89,90" class="form-control">
-              </div>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <div class="row">
-              <div class="col-sm-4">
-                <label>Cliente</label>
-                <select name="select" class="form-control select-search input-lg">
-                  <option value="opt1">Selecione</option>
-                  <option value="opt2">Cliente 1</option>
-                  <option value="opt3">Cliente 2</option>
-                  <option value="opt4">Cliente 3</option>
-                  <option value="opt5">Cliente 4</option>
-                  <option value="opt6">Cliente 5</option>
-                  <option value="opt7">Cliente 6</option>
-                  <option value="opt8">Cliente 7</option>
-                </select>
-              </div>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <div class="row">
-              <div class="col-sm-4">
-                <label>Forma de Pagamento</label>
-                <select name="select" class="form-control select-search input-lg">
-                  <option value="opt1">Selecione</option>
-                  <option value="opt2">Dinheiro</option>
-                  <option value="opt3">Cartão de Débito</option>
-                  <option value="opt4">Cartão de Crédito</option>
-                  <option value="opt5">Paypal</option>
-                </select>
-              </div>
-            </div>
-          </div>
-
-
-        </div>
-
-        <div class="modal-footer">
-          <button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
-          <button type="submit" class="btn btn-primary">Cadastrar</button>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   </div>
-</div>
-<!-- modal cadastro -->
+  <!-- modal de dados -->
 
-<!-- modal de dados -->
-<div id="modal_dados_vertical" class="modal fade">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h5 class="modal-title">Dados do Produto/Serviço</h5>
-      </div>
 
-      <form action="#">
+
+  <!-- modal home -->
+  <div id="modal_theme_danger" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-danger">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h6 class="modal-title">Aviso</h6>
+        </div>
+
         <div class="modal-body">
-          <div class="form-group">
-            <div class="row">
-              <div class="col-sm-6">
-                <label>Produto/Serviço</label>
-                <br> Produto 1
-              </div>
-            </div>
-          </div>
 
-          <div class="form-group">
-            <div class="row">
-              <div class="col-sm-6">
-                <label>Valor</label>
-                <br> 7,90
-              </div>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <div class="row">
-              <div class="col-sm-4">
-                <label>Quantidade em estoque</label>
-                <br> 1081
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="modal-footer">
-          <button type="button" class="btn btn-link" data-dismiss="modal">Fechar</button>
-
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
-<!-- modal de dados -->
-
-
-
-<!-- modal home -->
-<div id="modal_theme_danger" class="modal fade">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header bg-danger">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h6 class="modal-title">Aviso</h6>
-      </div>
-
-      <div class="modal-body">
-       
           <h6 class="text-semibold">Tem certeza que deseja sair?</h6>
-        
 
-      </div>
-
-      <div class="modal-footer">
-        <button type="button" class="btn btn-link" data-dismiss="modal">Não</button>
-        <a routerLink="/home"type="button" class="btn btn-danger">Sim</a>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- /modal home -->
-
-<!-- modal de abrir caixa -->
-<div id="modal_form_vertical_abcaixa" class="modal fade">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h5 class="modal-title">Abrir Caixa</h5>
-      </div>
-
-      <form action="#">
-        <div class="modal-body">
-          <div class="form-group">
-            <div class="row">
-              <div class="col-sm-6">
-                <label>Usuário:</label>
-                <input type="text" placeholder="Juscleide" class="form-control">
-              </div>
-
-              <div class="col-sm-6">
-                <label>Data:</label>
-                <input type="data" placeholder="01/01/2001" class="form-control">
-              </div>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <div class="row">
-              <div class="col-sm-6">
-                <label>Reforço:</label>
-                <input type="decimal" placeholder="R$250,00" class="form-control">
-              </div>
-
-
-
-            </div>
-          </div>
 
         </div>
 
         <div class="modal-footer">
-          <button type="button" class="btn btn-link" data-dismiss="modal">Fechar</button>
-          <button type="submit" class="btn btn-primary">Salvar</button>
+          <button type="button" class="btn btn-link" data-dismiss="modal">Não</button>
+          <a routerLink="/home" type="button" class="btn btn-danger">Sim</a>
         </div>
-      </form>
+      </div>
     </div>
   </div>
-</div>
-<!-- /modal de abrir caixa -->
+  <!-- /modal home -->
 
-<!-- modal de fechar caixa -->
-<!--aviso-->
-<div id="modal_theme_danger_f" class="modal fade">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header bg-danger">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h6 class="modal-title">Aviso</h6>
+  <!-- modal de abrir caixa -->
+  <div id="modal_form_vertical_abcaixa" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h5 class="modal-title">Abrir Caixa</h5>
+        </div>
+
+        <form action="#">
+          <div class="modal-body">
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-6">
+                  <label>Usuário:</label>
+                  <input type="text" placeholder="Juscleide" class="form-control">
+                </div>
+
+                <div class="col-sm-6">
+                  <label>Data:</label>
+                  <input type="data" placeholder="01/01/2001" class="form-control">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-6">
+                  <label>Reforço:</label>
+                  <input type="decimal" placeholder="R$250,00" class="form-control">
+                </div>
+
+
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-link" data-dismiss="modal">Fechar</button>
+            <button type="submit" class="btn btn-primary">Salvar</button>
+          </div>
+        </form>
       </div>
+    </div>
+  </div>
+  <!-- /modal de abrir caixa -->
 
-      <div class="modal-body">
-        
+  <!-- modal de fechar caixa -->
+  <!--aviso-->
+  <div id="modal_theme_danger_f" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-danger">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h6 class="modal-title">Aviso</h6>
+        </div>
+
+        <div class="modal-body">
+
           <h6 class="text-semibold">Tem certeza que deseja fechar o caixa de hoje? Caso queira, saiba que não podera abrir o caixa novamente da presente
             data, somente no dia seguinte.</h6>
-        
 
-      </div>
 
-      <div class="modal-footer">
-        <button type="button" class="btn btn-link" data-dismiss="modal">Não</button>
-        <a href="" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal_mini">Sim, quero Fechar!</a>
-      </div>
-    </div>
-  </div>
-</div>
-<!--/aviso-->
+        </div>
 
-<!--Resumo-->
-<div id="modal_mini" class="modal fade">
-  <div class="modal-dialog modal-xs">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h5 class="modal-title">Fechar Caixa</h5>
-      </div>
-
-      <div class="modal-body">
-        <h6 class="text-semibold">Resumo</h6>
-        <p>
-          <i class="icon-user"></i>
-          <b> Usuário: </b>Juscleide</p>
-        <p>
-          <i class="icon-calendar2"></i>
-          <b> Data: </b>01/01/2001</p>
-
-        <hr>
-
-        <h6 class="text-semibold">Valor Liquído</h6>
-        <p>
-          <i class=" icon-cash"></i>
-          <b> Dinheiro: </b>R$187,00</p>
-        <p>
-          <i class=" icon-credit-card"></i>
-          <b> Cartão: </b>R$250,00</p>
-        <p>
-          <i class=" icon-pencil7"></i>
-          <b> Crediário: </b>R$0,00</p>
-      </div>
-
-      <div class="modal-footer">
-        <button type="button" class="btn btn-link" data-dismiss="modal">Fechar</button>
-        <a href="home.html" type="button" class="btn btn-primary">OK</a>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-link" data-dismiss="modal">Não</button>
+          <a href="" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal_mini">Sim, quero Fechar!</a>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<!--/Resumo-->
-<!-- /modal de fechar caixa -->
+  <!--/aviso-->
 
+  <!--Resumo-->
+  <div id="modal_mini" class="modal fade">
+    <div class="modal-dialog modal-xs">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h5 class="modal-title">Fechar Caixa</h5>
+        </div>
 
-<!-- modal de finalizar compra -->
-<div id="modal_theme_warning" class="modal fade">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header bg-warning">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h6 class="modal-title">Finalizar Movimento</h6>
+        <div class="modal-body">
+          <h6 class="text-semibold">Resumo</h6>
+          <p>
+            <i class="icon-user"></i>
+            <b> Usuário: </b>Juscleide</p>
+          <p>
+            <i class="icon-calendar2"></i>
+            <b> Data: </b>01/01/2001</p>
+
+          <hr>
+
+          <h6 class="text-semibold">Valor Liquído</h6>
+          <p>
+            <i class=" icon-cash"></i>
+            <b> Dinheiro: </b>R$187,00</p>
+          <p>
+            <i class=" icon-credit-card"></i>
+            <b> Cartão: </b>R$250,00</p>
+          <p>
+            <i class=" icon-pencil7"></i>
+            <b> Crediário: </b>R$0,00</p>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-link" data-dismiss="modal">Fechar</button>
+          <a href="home.html" type="button" class="btn btn-primary">OK</a>
+        </div>
       </div>
+    </div>
+  </div>
+  <!--/Resumo-->
+  <!-- /modal de fechar caixa -->
 
-      <div class="modal-body">
-        
+
+  <!-- modal de finalizar compra -->
+  <div id="modal_theme_warning" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-warning">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h6 class="modal-title">Finalizar Movimento</h6>
+        </div>
+
+        <div class="modal-body">
+
           <button type="button" class="btn btn-default btn-float">
             <i class="icon-cash"></i>
             <span>Dinheiro</span>
@@ -480,15 +483,15 @@
             <i class="icon-pencil7"></i>
             <span>Crediário</span>
           </button>
-        
-      </div>
 
-      <div class="modal-footer">
-       
+        </div>
+
+        <div class="modal-footer">
+
           <button type="button" class="btn btn-link" data-dismiss="modal">Fechar</button>
           <button type="button" class="btn btn-warning">Confirmar</button>
-        
+
+        </div>
       </div>
     </div>
   </div>
-</div>
