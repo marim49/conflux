@@ -55,7 +55,7 @@ export class CadastroProdutoComponent implements OnInit {
     this.toastr.success('Sucesso !',"O Dado foi Gravado com Êxito");
     cadastroproduto.form.reset();
 
-  }
+  } 
 
   /*função que recebe a key do produto selecionado pelo usuario  */
   recebeselect(chave) {
