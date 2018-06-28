@@ -8,7 +8,7 @@ import { ModuleWithProviders } from '@angular/compiler/src/core';
 import {HomeComponent} from './home/home.component';
 import { Component } from '@angular/core';
 import {AppComponent}from './app.component';
-import {CadastroClienteComponent} from './cliente/cadastro-cliente/cadastro-cliente.component'
+import {ClienteComponent} from './cliente/cliente.component'
 import {EditarClienteComponent} from './cliente/editar-cliente/editar-cliente.component'
 import {CadastroProdutoComponent} from './produto/cadastro-produto/cadastro-produto.component'
 import {EditarProdutoComponent} from './produto/editar-produto/editar-produto.component'
@@ -25,7 +25,7 @@ const paginas: Routes = [
     {path:'',component:UserloginComponent},
     {path:'cadastrologin',component:CadastrologinComponent},
     {path: 'home', component:HomeComponent},
-    {path: 'home/cliente', component:CadastroClienteComponent},
+    {path: 'home/cliente', component:ClienteComponent},
     {path: 'home/produto', component:CadastroProdutoComponent},
     {path: 'home/recebimento', component:RecebimentoComponent},
     {path: 'home/despesa', component:DespesaComponent},
