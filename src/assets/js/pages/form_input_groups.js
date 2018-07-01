@@ -47,7 +47,7 @@ $(function() {
 
     // Basic example
     $(".touchspin-basic").TouchSpin({
-        postfix: '<i class="icon-paragraph-justify2"></i>'
+        
     });
 
 
