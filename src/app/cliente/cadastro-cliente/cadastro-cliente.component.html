@@ -15,17 +15,14 @@
       <!-- Page length options -->
       <div class="panel panel-flat">
         <div class="panel-heading">
-          <h5 class="panel-title">Consultar Clientes</h5>
+          <h5 class="panel-title"> Clientes</h5>
           <div class="heading-elements">
 
             <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#modal_form_vertical">Cadastrar Cliente
               <i class=" icon-user-plus position-right"></i>
             </button>
 
-            <button type="button" class="btn btn-success">Editar/Eliminar Cliente
-              <i class=" icon-user-minus position-right"></i>
-              <a href="editar_eliminar_cliente.html"></a>
-            </button>
+            
 
 
           </div>
@@ -37,227 +34,51 @@
 
           <table class="table datatable-show-all">
             <thead>
-              <tr>
-                <th>ID</th>
+              <tr >
+                <th>Código Cliente </th>
                 <th>Nome/Razão Social</th>
                 <th>CPF/CNPJ</th>
                 <th>Celular</th>
                 <th>Status</th>
+                <th>Editar/Elimar</th>
 
 
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>1</td>
+              <tr *ngFor="let c of clientes|async">
+                <td>{{c.CodigoCliente}}</td>
                 <td>
-                  <a href="" data-toggle="modal" data-target="#modal_dados_vertical">Lorrany Amorim</a>
+                  {{c.NomeRazao}}
                 </td>
-                <td>99999999900</td>
-                <td>31 998515217</td>
+                <td>{{c.CpfCnpj}}</td>
+                <td>{{c.Celular}}</td>
                 <td>
-                  <span class="label label-success">Ativo</span>
+                  <span class="label label-success">{{c.Status}}</span>
                 </td>
                 <td class="text-center">
+                  <ul class="icons-list">
+                    <li class="dropdown">
 
+                      <ul class="icons-list">
+                        <li class="text-primary-600">
+                          <a (click)="recebeselect(c.key)">
+                            <i class="icon-pencil7" data-toggle="modal" data-target="#modal_form_vertical_editar"></i>
+                          </a>
+                        </li>
+                        <li class="text-danger-600">
+                          <a (click)="recebeselect(c.key)">
+                            <i class="icon-trash" data-toggle="modal" data-target="#modal_theme_danger"></i>
+                          </a>
+                        </li>
+
+
+                      </ul>
+                    </li>
+                  </ul>
                 </td>
               </tr>
-              <tr>
-                <td>2</td>
-                <td>
-                  <a href="" data-toggle="modal" data-target="#modal_dados_vertical">Lorrany Amorim</a>
-                </td>
-                <td>99999999900</td>
-                <td>31 998515217</td>
-                <td>
-                  <span class="label label-success">Ativo</span>
-                </td>
-                <td class="text-center">
-
-                </td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>
-                  <a href="" data-toggle="modal" data-target="#modal_dados_vertical">Lorrany Amorim</a>
-                </td>
-                <td>99999999900</td>
-                <td>31 998515217</td>
-                <td>
-                  <span class="label label-success">Ativo</span>
-                </td>
-                <td class="text-center">
-
-                </td>
-              </tr>
-              <tr>
-                <td>4</td>
-                <td>
-                  <a href="" data-toggle="modal" data-target="#modal_dados_vertical">Lorrany Amorim</a>
-                </td>
-                <td>99999999900</td>
-                <td>31 998515217</td>
-                <td>
-                  <span class="label label-success">Ativo</span>
-                </td>
-                <td class="text-center">
-
-                </td>
-              </tr>
-              <tr>
-                <td>5</td>
-                <td>
-                  <a href="" data-toggle="modal" data-target="#modal_dados_vertical">Lorrany Amorim</a>
-                </td>
-                <td>99999999900</td>
-                <td>31 998515217</td>
-                <td>
-                  <span class="label label-success">Ativo</span>
-                </td>
-                <td class="text-center">
-
-                </td>
-              </tr>
-              <tr>
-                <td>6</td>
-                <td>
-                  <a href="" data-toggle="modal" data-target="#modal_dados_vertical">Lorrany Amorim</a>
-                </td>
-                <td>99999999900</td>
-                <td>31 998515217</td>
-                <td>
-                  <span class="label label-success">Ativo</span>
-                </td>
-                <td class="text-center">
-
-                </td>
-              </tr>
-              <tr>
-                <td>7</td>
-                <td>
-                  <a href="" data-toggle="modal" data-target="#modal_dados_vertical">Lorrany Amorim</a>
-                </td>
-                <td>99999999900</td>
-                <td>31 998515217</td>
-                <td>
-                  <span class="label label-success">Ativo</span>
-                </td>
-                <td class="text-center">
-
-                </td>
-              </tr>
-              <tr>
-                <td>8</td>
-                <td>
-                  <a href="" data-toggle="modal" data-target="#modal_dados_vertical">Lorrany Amorim</a>
-                </td>
-                <td>99999999900</td>
-                <td>31 998515217</td>
-                <td>
-                  <span class="label label-success">Ativo</span>
-                </td>
-                <td class="text-center">
-
-                </td>
-              </tr>
-              <tr>
-                <td>9</td>
-                <td>
-                  <a href="" data-toggle="modal" data-target="#modal_dados_vertical">Lorrany Amorim</a>
-                </td>
-                <td>99999999900</td>
-                <td>31 998515217</td>
-                <td>
-                  <span class="label label-success">Ativo</span>
-                </td>
-                <td class="text-center">
-
-                </td>
-              </tr>
-              <tr>
-                <td>10</td>
-                <td>
-                  <a href="" data-toggle="modal" data-target="#modal_dados_vertical">Lorrany Amorim</a>
-                </td>
-                <td>99999999900</td>
-                <td>31 998515217</td>
-                <td>
-                  <span class="label label-success">Ativo</span>
-                </td>
-                <td class="text-center">
-
-                </td>
-              </tr>
-              <tr>
-                <td>11</td>
-                <td>
-                  <a href="" data-toggle="modal" data-target="#modal_dados_vertical">Lorrany Amorim</a>
-                </td>
-                <td>99999999900</td>
-                <td>31 998515217</td>
-                <td>
-                  <span class="label label-success">Ativo</span>
-                </td>
-                <td class="text-center">
-
-                </td>
-              </tr>
-              <tr>
-                <td>12</td>
-                <td>
-                  <a href="" data-toggle="modal" data-target="#modal_dados_vertical">Lorrany Amorim</a>
-                </td>
-                <td>99999999900</td>
-                <td>31 998515217</td>
-                <td>
-                  <span class="label label-success">Ativo</span>
-                </td>
-                <td class="text-center">
-
-                </td>
-              </tr>
-              <tr>
-                <td>13</td>
-                <td>
-                  <a href="" data-toggle="modal" data-target="#modal_dados_vertical">Lorrany Amorim</a>
-                </td>
-                <td>99999999900</td>
-                <td>31 998515217</td>
-                <td>
-                  <span class="label label-success">Ativo</span>
-                </td>
-                <td class="text-center">
-
-                </td>
-              </tr>
-              <tr>
-                <td>14</td>
-                <td>
-                  <a href="" data-toggle="modal" data-target="#modal_dados_vertical">Lorrany Amorim</a>
-                </td>
-                <td>99999999900</td>
-                <td>31 998515217</td>
-                <td>
-                  <span class="label label-success">Ativo</span>
-                </td>
-                <td class="text-center">
-
-                </td>
-              </tr>
-              <tr>
-                <td>15</td>
-                <td>
-                  <a href="" data-toggle="modal" data-target="#modal_dados_vertical">Lorrany Amorim</a>
-                </td>
-                <td>99999999900</td>
-                <td>31 998515217</td>
-                <td>
-                  <span class="label label-success">Ativo</span>
-                </td>
-                <td class="text-center">
-
-                </td>
-              </tr>
+              
             </tbody>
           </table>
         </div>
@@ -273,18 +94,22 @@
                 <h5 class="modal-title">Cadastrar Cliente</h5>
               </div>
 
-              <form action="#">
+              <form #cadastrocliente="ngForm" (ngSubmit)="createcliente(cadastrocliente)">
                 <div class="modal-body">
                   <div class="form-group">
                     <div class="row">
+                      <div class="col-sm-2">
+                        <label>Código Cliente</label>
+                        <input type="text" placeholder="Ex: 025" class="form-control" ngModel name="codproduto" ngModel pattern="[0-9]">
+                      </div><br>
                       <div class="col-sm-6">
                         <label>Nome/Razão Social</label>
-                        <input type="text" placeholder="Ex.: João da Silva" class="form-control">
+                        <input type="text" placeholder="Ex.: João da Silva" name="nome" ngModel class="form-control">
                       </div>
-
-                      <div class="col-sm-6">
+ 
+                      <div class="col-sm-4">
                         <label>CPF/CNPJ</label>
-                        <input type="text" placeholder="Ex.: 999.999.999-99" class="form-control">
+                        <input type="text" placeholder="Ex.: 999.999.999-99"name="cpf" ngModel class="form-control">
                       </div>
                     </div>
                   </div>
@@ -293,12 +118,12 @@
                     <div class="row">
                       <div class="col-sm-6">
                         <label>Telefone</label>
-                        <input type="text" placeholder="Ex.: 31 3333-3333" class="form-control">
+                        <input type="text" placeholder="Ex.: 31 3333-3333" class="form-control " name="telefone" ngModel pattern="[0-9]">
                       </div>
 
                       <div class="col-sm-6">
                         <label>Celular</label>
-                        <input type="text" placeholder="Ex.: 31 99800-0000" class="form-control">
+                        <input type="text" placeholder="Ex.: 31 99800-0000" class="form-control " name="celular" ngModel pattern="[0-9]">
                       </div>
                     </div>
                   </div>
@@ -307,86 +132,88 @@
                     <div class="row">
                       <div class="col-sm-4">
                         <label>E-mail</label>
-                        <input type="text" placeholder="Ex.: exemplo@exemplo.com" class="form-control">
+                        <input type="text" placeholder="Ex.: exemplo@exemplo.com" class="form-control" name="email" ngModel > 
                       </div>
 
                       <div class="col-sm-4">
                         <label>CEP</label>
-                        <input type="text" placeholder="Ex.: 00000-000" class="form-control">
+                        <input type="text" placeholder="Ex.: 00000-000" class="form-control" name="cep" ngModel pattern="[0-9]">
                       </div>
 
                       <div class="col-sm-4">
                         <label>Logradouro</label>
-                        <input type="text" placeholder="Ex.: Av, Rua, Alameda" class="form-control">
+                        <input type="text" placeholder="Ex.: Av, Rua, Alameda" class="form-control" name="rua" ngModel>
                       </div>
                     </div>
                   </div>
 
                   <div class="form-group">
                     <div class="row">
-                      <div class="col-sm-6">
+                      <div class="col-sm-4">
                         <label>Número</label>
-                        <input type="text" placeholder="Ex.: 111" class="form-control">
-                        < </div>
+                        <input type="text" placeholder="Ex.: 111" class="form-control" ngModel name="numerocasa"pattern="[0-9]">
+                         </div>
 
-                          <div class="col-sm-6">
+                          <div class="col-sm-4">
                             <label>Bairro</label>
-                            <input type="text" placeholder="Ex.: Centro" class="form-control">
+                            <input type="text" placeholder="Ex.: Centro" ngModel name="bairrocasa"class="form-control">
                           </div>
 
-                          <div class="col-sm-6">
+                          <div class="col-sm-4">
                             <label>Cidade</label>
-                            <input type="text" placeholder="Contagem" class="form-control">
+                            <input type="text" placeholder="Ex:Contagem" ngModel name="cidade" class="form-control">
 
                           </div>
 
-                          <div class="col-sm-6">
-                            <label>UF</label>
-                            <div class="form-group">
-                              <select name="select" class="form-control input-lg">
-                                <option value="opt1">Selecione</option>
-                                <option value="opt2">AC</option>
-                                <option value="opt3">AL</option>
-                                <option value="opt4">AP</option>
-                                <option value="opt5">AM</option>
-                                <option value="opt6">BA</option>
-                                <option value="opt7">CE</option>
-                                <option value="opt8">DF</option>
-                                <option value="opt8">ES</option>
-                                <option value="opt8">GO</option>
-                                <option value="opt8">MA</option>
-                                <option value="opt8">MT</option>
-                                <option value="opt8">MS</option>
-                                <option value="opt8">MG</option>
-                                <option value="opt8">PA</option>
-                                <option value="opt8">PB</option>
-                                <option value="opt8">PR</option>
-                                <option value="opt8">PE</option>
-                                <option value="opt8">PI</option>
-                                <option value="opt8">RJ</option>
-                                <option value="opt8">RN</option>
-                                <option value="opt8">RS</option>
-                                <option value="opt8">RO</option>
-                                <option value="opt8">RR</option>
-                                <option value="opt8">SC</option>
-                                <option value="opt8">SP</option>
-                                <option value="opt8">SE</option>
-                                <option value="opt8">TO</option>
-
-                              </select>
-                            </div>
-                          </div>
+                          
 
                           <div class="form-group">
                             <div class="row">
+                              
+                              <div class="col-sm-3">
+                                <label>UF</label>
+                                <div class="form-group">
+                                  <select name="selectEstados" [(ngModel)]="opestado"class="form-control input-lg">
+                                    <option value="">Selecione</option>
+                                    <option value="AC">AC</option>
+                                    <option value="AL">AL</option>
+                                    <option value="AP">AP</option>
+                                    <option value="AM">AM</option>
+                                    <option value="BA">BA</option>
+                                    <option value="CE">CE</option>
+                                    <option value="DF">DF</option>
+                                    <option value="ES">ES</option>
+                                    <option value="GO">GO</option>
+                                    <option value="MA">MA</option>
+                                    <option value="MT">MT</option>
+                                    <option value="MS">MS</option>
+                                    <option value="MG">MG</option>
+                                    <option value="PA">PA</option>
+                                    <option value="PB">PB</option>
+                                    <option value="PR">PR</option>
+                                    <option value="PE">PE</option>
+                                    <option value="PI">PI</option>
+                                    <option value="RJ">RJ</option>
+                                    <option value="RN">RN</option>
+                                    <option value="RS">RS</option>
+                                    <option value="RO">RO</option>
+                                    <option value="RR">RR</option>
+                                    <option value="SC">SC</option>
+                                    <option value="SP">SP</option>
+                                    <option value="SE">SE</option>
+                                    <option value="TO">TO</option>
+    
+                                  </select>
+                                </div>
+                              </div>
 
-                              <div class="col-sm-6">
+                              <div class="col-sm-2">
                                 <label>Status</label>
                                 <div class="form-group">
-                                  <select name="select" class="form-control input-lg">
+                                  <select name="select" [(ngModel)]="opstatus"class="form-control input-lg">
                                     <option value="opt1">Selecione</option>
-                                    <option value="opt2">Ativo</option>
-                                    <option value="opt3">Inativo</option>
+                                    <option value="Ativo">Ativo</option>
+                                    <option value="Inativo">Inativo</option>
 
                                   </select>
                                 </div>
@@ -408,159 +235,180 @@
             </div>
           </div>
           <!-- modal cadastro -->
-
-          <!-- modal de dados -->
-          <div id="modal_dados_vertical" class="modal fade">
+           <!-- inicio modal editar cliente -->
+        <div id="modal_form_vertical_editar" class="modal fade">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  <h5 class="modal-title">Dados do Cliente</h5>
+                  <h5 class="modal-title">Editar Cliente</h5>
                 </div>
-
-                <form action="#">
+  
+                <form #editarcliente="ngForm" (ngSubmit)="updatecliente(editarcliente)">
                   <div class="modal-body">
                     <div class="form-group">
                       <div class="row">
+                        <div class="col-sm-2">
+                          <label>Código Cliente</label>
+                          <input type="text" placeholder="Ex: 025" class="form-control" ngModel name="codproduto" ngModel pattern="[0-9]">
+                        </div><br>
                         <div class="col-sm-6">
                           <label>Nome/Razão Social</label>
-                          <br> Lorrany Amorim
+                          <input type="text" placeholder="Ex.: João da Silva" name="nome" ngModel class="form-control">
                         </div>
-
-                        <div class="col-sm-6">
+   
+                        <div class="col-sm-4">
                           <label>CPF/CNPJ</label>
-                          <br> 111.111.111-00
+                          <input type="text" placeholder="Ex.: 999.999.999-99"name="cpf" ngModel class="form-control">
                         </div>
                       </div>
                     </div>
-
+  
                     <div class="form-group">
                       <div class="row">
                         <div class="col-sm-6">
                           <label>Telefone</label>
-                          <br> 31 3333-0000
+                          <input type="text" placeholder="Ex.: 31 3333-3333" class="form-control " name="telefone" ngModel pattern="[0-9]">
                         </div>
-
+  
                         <div class="col-sm-6">
                           <label>Celular</label>
-                          <br> 31 9 9999-0000
+                          <input type="text" placeholder="Ex.: 31 99800-0000" class="form-control " name="celular" ngModel pattern="[0-9]">
                         </div>
                       </div>
                     </div>
-
+  
                     <div class="form-group">
                       <div class="row">
                         <div class="col-sm-4">
                           <label>E-mail</label>
-                          <br> lorranybatistaamorim@gmail.com.br
+                          <input type="text" placeholder="Ex.: exemplo@exemplo.com" class="form-control" name="email" ngModel > 
                         </div>
-
+  
                         <div class="col-sm-4">
                           <label>CEP</label>
-                          <br> 32000-000
+                          <input type="text" placeholder="Ex.: 00000-000" class="form-control" name="cep" ngModel pattern="[0-9]">
                         </div>
-
+  
                         <div class="col-sm-4">
                           <label>Logradouro</label>
-                          <br> Rua Petropólis
+                          <input type="text" placeholder="Ex.: Av, Rua, Alameda" class="form-control" name="rua" ngModel>
                         </div>
                       </div>
                     </div>
-
+  
                     <div class="form-group">
                       <div class="row">
-                        <div class="col-sm-6">
+                        <div class="col-sm-4">
                           <label>Número</label>
-                          <br> 111A
+                          <input type="text" placeholder="Ex.: 111" class="form-control" ngModel name="numerocasa"pattern="[0-9]">
+                           </div>
+  
+                            <div class="col-sm-4">
+                              <label>Bairro</label>
+                              <input type="text" placeholder="Ex.: Centro" ngModel name="bairrocasa"class="form-control">
+                            </div>
+  
+                            <div class="col-sm-4">
+                              <label>Cidade</label>
+                              <input type="text" placeholder="Ex:Contagem" ngModel name="cidade" class="form-control">
+  
+                            </div>
+  
+                            <div class="col-sm-2">
+                              <label>UF</label>
+                              <div class="form-group">
+                                <select name="select" [(ngModel)]="opestado"class="form-control input-lg">
+                                  <option value="">Selecione</option>
+                                  <option value="AC">AC</option>
+                                  <option value="AL">AL</option>
+                                  <option value="AP">AP</option>
+                                  <option value="AM">AM</option>
+                                  <option value="BA">BA</option>
+                                  <option value="CE">CE</option>
+                                  <option value="DF">DF</option>
+                                  <option value="ES">ES</option>
+                                  <option value="GO">GO</option>
+                                  <option value="MA">MA</option>
+                                  <option value="MT">MT</option>
+                                  <option value="MS">MS</option>
+                                  <option value="MG">MG</option>
+                                  <option value="PA">PA</option>
+                                  <option value="PB">PB</option>
+                                  <option value="PR">PR</option>
+                                  <option value="PE">PE</option>
+                                  <option value="PI">PI</option>
+                                  <option value="RJ">RJ</option>
+                                  <option value="RN">RN</option>
+                                  <option value="RS">RS</option>
+                                  <option value="RO">RO</option>
+                                  <option value="RR">RR</option>
+                                  <option value="SC">SC</option>
+                                  <option value="SP">SP</option>
+                                  <option value="SE">SE</option>
+                                  <option value="TO">TO</option>
+  
+                                </select>
+                              </div>
+                            </div>
+  
+                            <div class="form-group">
+                              <div class="row">
+  
+                                <div class="col-sm-2">
+                                  <label>Status</label>
+                                  <div class="form-group">
+                                    <select name="select" [(ngModel)]="opstatus"class="form-control input-lg">
+                                      <option value="opt1">Selecione</option>
+                                      <option value="Ativo">Ativo</option>
+                                      <option value="Inativo">Inativo</option>
+  
+                                    </select>
+                                  </div>
+                                </div>
+  
+                              </div>
+                            </div>
+  
                         </div>
-
-                        <div class="col-sm-6">
-                          <label>Bairro</label>
-                          <br> Industrial São Luiz
-                        </div>
-
-                        <div class="col-sm-6">
-                          <label>Cidade</label>
-                          <br> Contagem
-                        </div>
-
-                        <div class="col-sm-6">
-                          <label>UF</label>
-                          <br> MG
-                        </div>
-
                       </div>
                     </div>
-                  </div>
-
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-link" data-dismiss="modal">Fechar</button>
-
-                  </div>
+  
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+                      <button type="submit" class="btn btn-primary">Cadastrar</button>
+                    </div>
                 </form>
-              </div>
-            </div>
-          </div>
-          <!-- modal de dados -->
-
-
-
-          <!-- Basic modal -->
-          <div id="modal_default" class="modal fade">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  <h5 class="modal-title">Dados do Cliente</h5>
-                </div>
-
-                <div class="modal-body">
-                  <h6 class="text-semibold">Nome/Razão Social:</h6>
-                  <p>Lorrany Batista de Amorim</p>
-
-                  <h6 class="text-semibold">CPF/CNPJ:</h6>
-                  99999999900
-
-                  <h6 class="text-semibold">Telefone:</h6>
-                  31 33981019
-
-                  <h6 class="text-semibold">Celular:</h6>
-                  31 998515217
-
-                  <h6 class="text-semibold">E-mail:</h6>
-                  lorranybatistaamorim@gmail.com
-
-                  <h6 class="text-semibold">CEP:</h6>
-                  31073010
-
-                  <h6 class="text-semibold">Logradouro:</h6>
-                  Rua Petropólis
-
-                  <h6 class="text-semibold">Número:</h6>
-                  539
-
-                  <h6 class="text-semibold">Bairro:</h6>
-                  Industrial São Luiz
-
-                  <h6 class="text-semibold">Cidade:</h6>
-                  Contagem
-
-                  <h6 class="text-semibold">UF:</h6>
-                  MG
-
-
-                </div>
-
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
-
                 </div>
               </div>
             </div>
+            <!-- fim modal editar cliente -->
+          
+          
+
+          <!-- Modal de delete -->
+        <div id="modal_theme_danger" class="modal fade">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header bg-danger">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h6 class="modal-title">AVISO!</h6>
+              </div>
+
+              <div class="modal-body">
+                <h6 class="text-semibold">Tem certeza que deseja excluir este cadastro?</h6>
+
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-link" data-dismiss="modal">Não</button>
+                <button type="button" (click)="deletarcliente()" class="btn btn-danger">SIM!</button>
+
+              </div>
+            </div>
           </div>
-          <!-- /basic modal -->
-
-
+        </div>
+        <!-- Modal de delete -->
 
 
         </div>
