@@ -88,7 +88,7 @@ $(function() {
                 xAxis: [{
                     type: 'category',
                     boundaryGap: false,
-                    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+                    data: ['Seg', 'Ter', 'Qua', 'Quin', 'Sex', 'Sab', 'Dom']
                 }],
 
                 // Vertical axis
@@ -159,7 +159,7 @@ $(function() {
                     type: 'category',
                     boundaryGap: false,
                     data: [
-                        'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'
+                        'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo'
                     ]
                 }],
 
@@ -459,7 +459,7 @@ $(function() {
                     type: 'category',
                     boundaryGap: false,
                     data: [
-                        'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'
+                        'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo'
                     ]
                 }],
 
@@ -526,7 +526,7 @@ $(function() {
                 xAxis: [{
                     type: 'category',
                     boundaryGap: false,
-                    data: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+                    data: ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo']
                 }],
 
                 // Add vertical axis
@@ -604,7 +604,7 @@ $(function() {
                     axisLine: {
                         onZero: false
                     },
-                    data: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+                    data: ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo']
                 }],
 
                 // Add vertical axis

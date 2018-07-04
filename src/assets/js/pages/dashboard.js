@@ -382,8 +382,8 @@ $(function() {
                         tooltip.html(
                             "<ul class='list-unstyled mb-5'>" +
                                 "<li>" + "<div class='text-size-base mt-5 mb-5'><i class='icon-circle-left2 position-left'></i>" + d.key + "</div>" + "</li>" +
-                                "<li>" + "Visits: &nbsp;" + "<span class='text-semibold pull-right'>" + pro + "</span>" + "</li>" +
-                                "<li>" + "Time: &nbsp; " + "<span class='text-semibold pull-right'>" + formatDate(d.values[mousedate].date) + "</span>" + "</li>" + 
+                                "<li>" + "Quantidade: &nbsp;" + "<span class='text-semibold pull-right'>" + pro + "</span>" + "</li>" +
+                                "<li>" + "Horário: &nbsp; " + "<span class='text-semibold pull-right'>" + formatDate(d.values[mousedate].date) + "</span>" + "</li>" + 
                             "</ul>"
                         )
                         .style("display", "block");
@@ -1020,7 +1020,7 @@ $(function() {
                     .attr('x', width)
                     .attr('y', -(margin.top/2))
                     .style('text-anchor', 'end')
-                    .text(function (d, i) { return d3.sum(d.values, function(d) { return d.value; }) + " sales today" });
+                    .text(function (d, i) { return d3.sum(d.values, function(d) { return d.value; }) + " vendas hoje" });
 
 
 
@@ -1053,11 +1053,11 @@ $(function() {
                 heatMap
                     .on("mouseover", function (d, i) {
                         d3.select(this).style('opacity', 0.75);
-                        d3.select(this.parentNode).select('.sales-count').text(function(d) { return d.values[i].value + " sales at " + formatTime(d.values[i].date); })
+                        d3.select(this.parentNode).select('.sales-count').text(function(d) { return d.values[i].value + " venda(s) às " + formatTime(d.values[i].date); })
                     })
                     .on("mouseout", function (d, i) {
                         d3.select(this).style('opacity', 1);
-                        d3.select(this.parentNode).select('.sales-count').text(function (d, i) { return d3.sum(d.values, function(d) { return d.value; }) + " sales today" })
+                        d3.select(this.parentNode).select('.sales-count').text(function (d, i) { return d3.sum(d.values, function(d) { return d.value; }) + " vendas hoje" })
                     })
             })
 
