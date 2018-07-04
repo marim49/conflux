@@ -19,6 +19,8 @@ export class ConteudoFluxoComponent implements OnInit {
   clientes: Observable<any[]>;
   CodProduto:any;
   CodCliente:any;
+  selectproduto:any;
+
   constructor(
     private angularfire: AngularFireDatabase,
     private toastr: ToastrService
@@ -35,13 +37,15 @@ export class ConteudoFluxoComponent implements OnInit {
 
   }
   form_submit(g: NgForm){
-    console.log(g.form.controls);
-    console.log('produto: ' + g.form.controls.product.value);
+    this.product.push({
+      /*nome: g.form.controls.products.value,*/
+      codCliente: g.form.controls.codcliente.value,
+      codProduto: g.form.controls.codproduto.value,
+      nomeProduto: this.selectproduto
+    });
+    g.form.reset();
   }
 
-  recebecodigo(evento: KeyboardEvent){
-    this.CodProduto=(<HTMLInputElement>evento.target).value;
-    console.log(this.CodProduto);
-  }
+  
 
 }
