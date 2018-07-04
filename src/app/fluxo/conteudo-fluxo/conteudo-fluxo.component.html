@@ -26,6 +26,7 @@
   <div class="panel-body">
     <div class="content">
       <div class="row">
+      <form #g="ngForm" (submit)="form_submit(g)">
         <div class="col-md-6">
           <div class="panel panel-flat">
             <div class="panel-body">
@@ -64,8 +65,7 @@
                       <select class="form-control">
                         <option></option>
                         <optgroup label="Clientes">
-                          <option value="AK">Mario</option>
-                          <option value="HI">Alejo</option>
+                            <option *ngFor="let c of clientes|async" value="{{c.NomeRazao}}">{{c.NomeRazao}}</option>
                         </optgroup>
                       </select>
                     </div>
@@ -75,8 +75,8 @@
                       <label>Procurar Produto:</label>
                       <select class="form-control">
                         <option></option>
-                        <optgroup label="Produtos ou Serviço" *ngFor="let p of produtos|async">
-                          <option value="{{p.NomeProdutoServico}}">{{p.NomeProdutoServico}}</option>
+                        <optgroup label="Produtos ou Serviço" name="product" >
+                          <option *ngFor="let p of produtos|async" value="{{p.NomeProdutoServico}}">{{p.NomeProdutoServico}}</option>
                         </optgroup>
                       </select>
                     </div>
@@ -89,9 +89,14 @@
                   </div>
                 </fieldset>
               </div>
+              <button type="submit" class="btn btn-success">Confirmar
+                  <i class="icon-arrow-right14 position-right"></i>
+                </button>
             </div>
           </div>
         </div>
+        
+      </form>
         <div class="col-md-6">
           <div class="content">
             <!-- Floating labels -->
@@ -108,10 +113,10 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
+                  <tr *ngFor="let p of product">
                     <td>1</td>
                     <td>
-                      <a href="" data-toggle="modal" data-target="#modal_dados_vertical">Produto 1</a>
+                      <a href="" data-toggle="modal" data-target="#modal_dados_vertical">{{p.codcliente}}</a>
                     </td>
                     <td>9</td>
                     <td>7,90</td>    
