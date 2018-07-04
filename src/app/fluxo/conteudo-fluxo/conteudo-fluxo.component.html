@@ -26,46 +26,47 @@
   <div class="panel-body">
     <div class="content">
       <div class="row">
+
         <div class="col-md-6">
           <div class="panel panel-flat">
             <div class="panel-body">
-              <div class="col-md-6">
-                <fieldset>
-
-
+              <form #g="ngForm" (submit)="form_submit(g)">
+                <div class="col-md-6">
 
                   <div class="form-group">
                     <div>
                       <label>Código Cliente: </label>
-                      <input type="text" name="codcliente" class="form-control">
+                      <input type="text" name="codcliente" ngModel class="form-control">
                     </div>
                     <div>
                       <br>
                       <label>Código Produto:</label>
-                      <input type="text" name="codproduto" class="form-control" (keyup)="recebecodigo($event)" placeholder="Ex:03" pattern="[0-9]">
+                      <input type="text" ngModel name="codproduto" class="form-control" placeholder="Ex:03" pattern="[0-9]">
                     </div>
                     <div>
                       <br>
                       <label>Valor Desconto:</label>
-                      <input type="text" name="valordesconto" class="form-control" placeholder="Ex:10%" pattern="[0-9]{3}">
+                      <input type="text" ngModel name="valordesconto" class="form-control" placeholder="Ex:10%" pattern="[0-9]{3}">
                     </div>
+                    <button type="submit" class="btn btn-success">Confirmar
+                      <i class="icon-arrow-right14 position-right"></i>
+                    </button>
                   </div>
 
-                </fieldset>
-              </div>
-              <div class="col-md-6">
-                <fieldset>
+
+                </div>
+                <div class="col-md-6">
+
                   <div class="form-group">
 
                     <div>
 
                       <span class="glyphicon glyphicon-search"></span>
                       <label>Procurar Cliente:</label>
-                      <select class="form-control">
+                      <select class="form-control" name="clientes">
                         <option></option>
-                        <optgroup label="Clientes">
-                          <option value="AK">Mario</option>
-                          <option value="HI">Alejo</option>
+                        <optgroup label="Clientes" >
+                          <option *ngFor="let c of clientes|async" value="{{c.NomeRazao}}">{{c.NomeRazao}}</option>
                         </optgroup>
                       </select>
                     </div>
@@ -73,10 +74,10 @@
                     <div>
                       <span class="glyphicon glyphicon-search"></span>
                       <label>Procurar Produto:</label>
-                      <select class="form-control">
+                      <select class="form-control" [(ngModel)]="selectproduto" name="products">
                         <option></option>
-                        <optgroup label="Produtos ou Serviço" *ngFor="let p of produtos|async">
-                          <option value="{{p.NomeProdutoServico}}">{{p.NomeProdutoServico}}</option>
+                        <optgroup label="Produtos ou Serviço " >
+                          <option *ngFor="let p of produtos|async" value="{{p.NomeProdutoServico}}">{{p.NomeProdutoServico}}</option>
                         </optgroup>
                       </select>
                     </div>
@@ -87,18 +88,22 @@
                     </div>
 
                   </div>
-                </fieldset>
-              </div>
+
+                </div>
+              </form>
+
             </div>
           </div>
         </div>
+
+
         <div class="col-md-6">
           <div class="content">
             <!-- Floating labels -->
 
             <div class="panel panel-flat">
 
-              <table class="table datatable-basic">
+              <table class="table">
                 <thead>
                   <tr>
                     <th>Cód Produto</th>
@@ -108,35 +113,13 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>
-                      <a href="" data-toggle="modal" data-target="#modal_dados_vertical">Produto 1</a>
-                    </td>
-                    <td>9</td>
-                    <td>7,90</td>    
-                    
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>
-                      <a href="" data-toggle="modal" data-target="#modal_dados_vertical">Produto 2</a>
-                    </td>
-                    <td>1</td>
-                    <td>170,90</td>
-   
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>
-                      <a href="" data-toggle="modal" data-target="#modal_dados_vertical">Produto 3</a>
-                    </td>
-                    <td>7</td>
-                    <td>35,90</td>
-
-                    
-
-                    
+                  <tr *ngFor="let p of product">
+                      <td>{{p.codProduto}}</td>
+                      <td>
+                        <a href="" data-toggle="modal" data-target="#modal_dados_vertical">{{p.nomeProduto}}</a>
+                      </td>
+                      <td>1</td>
+                      <td>13,00</td>
                   </tr>
                 </tbody>
               </table>
